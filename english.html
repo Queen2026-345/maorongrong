@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>高兴的英语磨耳朵</title>
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#7ecba1">
+<meta name="apple-mobile-web-app-title" content="英语磨耳朵">
+<meta name="theme-color" content="#7ecba1">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f0f7f4;--card:#fff;--primary:#7ecba1;--primary-dark:#5db88b;--text:#4a6b5d;--text-light:#7a9a8b;--border:#e0ede5;--warn:#ffa07a;--radius:16px;--shadow:0 2px 12px rgba(126,203,161,0.15)}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px;background-image:radial-gradient(ellipse at top,#e8f5ee 0%,#f0f7f4 60%)}
+.container{max-width:500px;width:100%}
+.header{text-align:center;padding:20px 0 12px}
+.header h1{font-size:1.6rem;color:#3d7a5c;font-weight:700;letter-spacing:1px}
+.header .sub{font-size:0.85rem;color:var(--text-light);margin-top:4px}
+
+/* Timer */
+.timer-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;text-align:center;margin-bottom:16px;border:1px solid var(--border)}
+.timer-ring{position:relative;width:100px;height:100px;margin:0 auto 10px}
+.timer-ring svg{transform:rotate(-90deg);width:100px;height:100px}
+.timer-bg{fill:none;stroke:#e8f0eb;stroke-width:6}
+.timer-progress{fill:none;stroke:var(--primary);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.timer-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:700;color:#3d7a5c}
+.timer-label{font-size:0.85rem;color:var(--text-light)}
+.btn-row{display:flex;gap:10px;justify-content:center;margin-top:10px}
+.btn{padding:10px 24px;border:none;border-radius:24px;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.btn-start{background:var(--primary);color:#fff}
+.btn-start:hover{background:var(--primary-dark)}
+.btn-pause{background:#fff3e0;color:#e08b5a}
+.btn-pause:hover{background:#ffe0cc}
+.btn:disabled{opacity:0.4;cursor:not-allowed}
+
+/* Content */
+.content-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;border:1px solid var(--border);min-height:200px}
+.unit-selector{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.unit-btn{padding:6px 14px;border:2px solid var(--border);border-radius:20px;background:#fff;font-size:0.82rem;font-weight:600;color:var(--text);cursor:pointer;transition:all 0.2s}
+.unit-btn:hover{border-color:var(--primary);color:var(--primary-dark)}
+.unit-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+.section-label{font-size:0.8rem;font-weight:700;color:var(--primary-dark);margin:10px 0 6px;display:flex;align-items:center;gap:4px}
+.vocab-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.vocab-chip{padding:5px 12px;background:#f5faf7;border-radius:20px;font-size:0.8rem;color:var(--text);border:1px solid var(--border)}
+.vocab-chip .en{font-weight:700;color:#3d7a5c}
+.vocab-chip .zh{color:var(--text-light);font-size:0.72rem}
+
+.sentence-item{padding:8px 12px;background:#fcfefd;border-radius:10px;margin-bottom:6px;font-size:0.85rem;line-height:1.6;border-left:3px solid var(--primary)}
+.sentence-item .en{font-weight:600;color:#3d7a5c}
+.sentence-item .zh{color:var(--text-light);font-size:0.78rem;margin-top:2px}
+
+.passage-box{background:#f9fdfb;border-radius:12px;padding:14px;line-height:1.8;font-size:0.88rem}
+.passage-box p{margin-bottom:8px}
+.passage-box .en-text{font-weight:600;color:#3d7a5c}
+.passage-box .zh-text{color:var(--text-light);font-size:0.8rem}
+
+/* TTS highlight */
+.tts-highlight{background:#ffe082;padding:1px 2px;border-radius:3px;transition:all 0.3s}
+
+/* Toast */
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#3d7a5c;color:#fff;padding:10px 24px;border-radius:24px;font-size:0.9rem;font-weight:600;z-index:200;opacity:0;transition:opacity 0.3s;pointer-events:none}
+.toast.show{opacity:1}
+
+/* Complete overlay */
+.complete-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;align-items:center;justify-content:center}
+.complete-overlay.show{display:flex}
+.complete-box{background:#fff;border-radius:20px;padding:32px;text-align:center;max-width:320px;width:90%}
+.complete-box .emoji{font-size:3rem;margin-bottom:12px}
+.complete-box h2{font-size:1.3rem;color:#3d7a5c;margin-bottom:6px}
+.complete-box p{font-size:0.9rem;color:var(--text-light);margin-bottom:16px}
+.complete-box button{padding:10px 28px;border:none;border-radius:24px;background:var(--primary);color:#fff;font-size:0.9rem;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🎧 高兴的英语磨耳朵</h1>
+    <div class="sub">沪教版 · 三升四衔接 · 每天15分钟</div>
+  </div>
+
+  <!-- Timer -->
+  <div class="timer-card">
+    <div class="timer-ring">
+      <svg viewBox="0 0 100 100">
+        <circle class="timer-bg" cx="50" cy="50" r="44"/>
+        <circle class="timer-progress" id="timer-circle" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+      </svg>
+      <div class="timer-text" id="timer-display">15:00</div>
+    </div>
+    <div class="timer-label" id="timer-status">准备开始</div>
+    <div class="btn-row">
+      <button class="btn btn-start" id="btn-start" onclick="startTimer()">▶ 开始磨耳朵</button>
+      <button class="btn btn-pause" id="btn-pause" onclick="pauseTimer()" disabled>⏸ 暂停</button>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content-card" id="content-area">
+    <div class="unit-selector" id="unit-buttons"></div>
+    <div id="unit-content"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="complete-overlay" id="complete-overlay">
+  <div class="complete-box">
+    <div class="emoji">🎉</div>
+    <h2>今天磨耳朵完成！</h2>
+    <p>15分钟到啦，你真棒！<br>明天继续加油哦~</p>
+    <button onclick="closeComplete()">👍 知道啦</button>
+  </div>
+</div>
+
+<script>
+// ==================== 课文数据 ====================
+// 沪教版三下(2024新教材) + 四上 单元内容
+const UNITS = [
+  // 三年级下册
+  {
+    grade: '三下', unit: 'Unit 1', title: 'How do we spend our free time?', theme: '课余活动',
+    vocab: [
+      {en:'read',zh:'阅读'},{en:'swim',zh:'游泳'},{en:'draw',zh:'画画'},{en:'dance',zh:'跳舞'},
+      {en:'sing',zh:'唱歌'},{en:'play basketball',zh:'打篮球'},{en:'play football',zh:'踢足球'},
+      {en:'ride a bike',zh:'骑自行车'},{en:'fly a kite',zh:'放风筝'},{en:'free time',zh:'空闲时间'}
+    ],
+    sentences: [
+      {en:'What do you do in your free time?',zh:'你在空闲时间做什么？'},
+      {en:'I like reading. I read every day.',zh:'我喜欢阅读，我每天读书。'},
+      {en:'Do you like swimming?',zh:'你喜欢游泳吗？'},
+      {en:'Yes, I do. I swim on Sundays.',zh:'是的，我周日游泳。'},
+      {en:'He likes playing basketball.',zh:'他喜欢打篮球。'},
+      {en:'She likes dancing very much.',zh:'她非常喜欢跳舞。'},
+      {en:'Let\'s fly a kite together!',zh:'我们一起放风筝吧！'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 2', title: 'How do we make friends?', theme: '交朋友',
+    vocab: [
+      {en:'friend',zh:'朋友'},{en:'share',zh:'分享'},{en:'help',zh:'帮助'},{en:'kind',zh:'友善的'},
+      {en:'play together',zh:'一起玩'},{en:'smile',zh:'微笑'},{en:'hello',zh:'你好'},
+      {en:'nice',zh:'好的'},{en:'talk',zh:'说话'},{en:'listen',zh:'听'}
+    ],
+    sentences: [
+      {en:'Hello, my name is Tom. What\'s your name?',zh:'你好，我叫Tom。你叫什么名字？'},
+      {en:'Nice to meet you!',zh:'很高兴认识你！'},
+      {en:'Can I play with you?',zh:'我能和你一起玩吗？'},
+      {en:'Let\'s be friends!',zh:'我们做朋友吧！'},
+      {en:'A good friend shares and helps.',zh:'好朋友会分享和帮助。'},
+      {en:'I like my friends. We play together.',zh:'我喜欢我的朋友，我们一起玩。'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 3', title: 'What do we wear?', theme: '穿着',
+    vocab: [
+      {en:'T-shirt',zh:'T恤'},{en:'shorts',zh:'短裤'},{en:'dress',zh:'连衣裙'},{en:'hat',zh:'帽子'},
+      {en:'shoes',zh:'鞋子'},{en:'coat',zh:'外套'},{en:'sweater',zh:'毛衣'},{en:'skirt',zh:'裙子'},
+      {en:'sunny',zh:'晴朗的'},{en:'rainy',zh:'下雨的'}
+    ],
+    sentences: [
+      {en:'What do you wear on a sunny day?',zh:'晴天你穿什么？'},
+      {en:'I wear a T-shirt and shorts.',zh:'我穿T恤和短裤。'},
+      {en:'Put on your coat. It\'s cold.',zh:'穿上外套，天冷了。'},
+      {en:'She has a beautiful dress.',zh:'她有一条漂亮的连衣裙。'},
+      {en:'I like your new shoes!',zh:'我喜欢你的新鞋子！'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 4', title: 'What sounds can we hear?', theme: '声音',
+    vocab: [
+      {en:'hear',zh:'听到'},{en:'sound',zh:'声音'},{en:'loud',zh:'大声的'},{en:'quiet',zh:'安静的'},
+      {en:'bird',zh:'鸟'},{en:'dog',zh:'狗'},{en:'cat',zh:'猫'},{en:'car',zh:'汽车'},
+      {en:'bell',zh:'铃铛'},{en:'music',zh:'音乐'}
+    ],
+    sentences: [
+      {en:'What can you hear?',zh:'你能听到什么？'},
+      {en:'I can hear a bird singing.',zh:'我能听到小鸟在唱歌。'},
+      {en:'The music is very beautiful.',zh:'音乐很美。'},
+      {en:'Listen! Can you hear the bell?',zh:'听！你能听到铃声吗？'},
+      {en:'The dog is barking. It\'s loud.',zh:'狗在叫，声音很大。'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 5', title: 'Where can we see colours?', theme: '颜色',
+    vocab: [
+      {en:'red',zh:'红色'},{en:'blue',zh:'蓝色'},{en:'green',zh:'绿色'},{en:'yellow',zh:'黄色'},
+      {en:'purple',zh:'紫色'},{en:'orange',zh:'橙色'},{en:'pink',zh:'粉色'},{en:'white',zh:'白色'},
+      {en:'black',zh:'黑色'},{en:'rainbow',zh:'彩虹'}
+    ],
+    sentences: [
+      {en:'What colour is the sky?',zh:'天空是什么颜色的？'},
+      {en:'The sky is blue and the grass is green.',zh:'天空是蓝色的，草地是绿色的。'},
+      {en:'I like red. Red is beautiful.',zh:'我喜欢红色，红色很美。'},
+      {en:'Look at the rainbow! So many colours!',zh:'看彩虹！好多颜色！'},
+      {en:'The sun is yellow and bright.',zh:'太阳又黄又亮。'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 6', title: 'What are our homes like?', theme: '家',
+    vocab: [
+      {en:'home',zh:'家'},{en:'room',zh:'房间'},{en:'bedroom',zh:'卧室'},{en:'kitchen',zh:'厨房'},
+      {en:'living room',zh:'客厅'},{en:'bathroom',zh:'浴室'},{en:'door',zh:'门'},{en:'window',zh:'窗户'},
+      {en:'big',zh:'大的'},{en:'small',zh:'小的'}
+    ],
+    sentences: [
+      {en:'What is your home like?',zh:'你家是什么样的？'},
+      {en:'There is a big living room.',zh:'有一个大客厅。'},
+      {en:'My bedroom is small but nice.',zh:'我的卧室小但很好。'},
+      {en:'The kitchen is where Mum cooks.',zh:'厨房是妈妈做饭的地方。'},
+      {en:'I love my home.',zh:'我爱我的家。'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 7', title: 'What do we do at school?', theme: '学校生活',
+    vocab: [
+      {en:'school',zh:'学校'},{en:'classroom',zh:'教室'},{en:'teacher',zh:'老师'},{en:'student',zh:'学生'},
+      {en:'learn',zh:'学习'},{en:'write',zh:'写'},{en:'read',zh:'读'},{en:'playground',zh:'操场'},
+      {en:'lunch',zh:'午餐'},{en:'homework',zh:'作业'}
+    ],
+    sentences: [
+      {en:'What do you do at school?',zh:'你在学校做什么？'},
+      {en:'We read and write in the classroom.',zh:'我们在教室里读书写字。'},
+      {en:'Our teacher is very kind.',zh:'我们的老师很友善。'},
+      {en:'I play with my friends on the playground.',zh:'我和朋友在操场上玩。'},
+      {en:'School is fun! I like going to school.',zh:'上学很有趣！我喜欢上学。'}
+    ]
+  },
+  {
+    grade: '三下', unit: 'Unit 8', title: 'What do you do on Children\'s Day?', theme: '儿童节',
+    vocab: [
+      {en:'Children\'s Day',zh:'儿童节'},{en:'gift',zh:'礼物'},{en:'party',zh:'派对'},{en:'happy',zh:'快乐的'},
+      {en:'sing',zh:'唱歌'},{en:'dance',zh:'跳舞'},{en:'game',zh:'游戏'},{en:'cake',zh:'蛋糕'},
+      {en:'fun',zh:'乐趣'},{en:'celebrate',zh:'庆祝'}
+    ],
+    sentences: [
+      {en:'Happy Children\'s Day!',zh:'儿童节快乐！'},
+      {en:'What do you do on Children\'s Day?',zh:'儿童节你做什么？'},
+      {en:'We have a party at school.',zh:'我们在学校开派对。'},
+      {en:'I get many gifts from my parents.',zh:'我从父母那里收到很多礼物。'},
+      {en:'Children\'s Day is so much fun!',zh:'儿童节太好玩了！'}
+    ]
+  },
+  // 四年级上册
+  {
+    grade: '四上', unit: 'Unit 1', title: 'Meeting new people', theme: '认识新朋友',
+    vocab: [
+      {en:'meet',zh:'遇见'},{en:'new',zh:'新的'},{en:'morning',zh:'早上'},{en:'afternoon',zh:'下午'},
+      {en:'classmate',zh:'同学'},{en:'name',zh:'名字'},{en:'her',zh:'她的'},{en:'his',zh:'他的'},
+      {en:'sit',zh:'坐'},{en:'nice',zh:'好的'}
+    ],
+    sentences: [
+      {en:'Good morning! Nice to meet you.',zh:'早上好！很高兴认识你。'},
+      {en:'Her name is Alice. She is my new classmate.',zh:'她叫Alice，是我的新同学。'},
+      {en:'You can sit here.',zh:'你可以坐这儿。'},
+      {en:'See you in the afternoon!',zh:'下午见！'},
+      {en:'This is our new friend, Peter.',zh:'这是我们的新朋友Peter。'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 2', title: 'Can you swim?', theme: '能力',
+    vocab: [
+      {en:'swim',zh:'游泳'},{en:'run',zh:'跑'},{en:'fly',zh:'飞'},{en:'draw',zh:'画画'},
+      {en:'write',zh:'写'},{en:'jump',zh:'跳'},{en:'climb',zh:'爬'},{en:'cook',zh:'做饭'},
+      {en:'fast',zh:'快'},{en:'well',zh:'好地'}
+    ],
+    sentences: [
+      {en:'Can you swim?',zh:'你会游泳吗？'},
+      {en:'Yes, I can swim very well.',zh:'是的，我游泳游得很好。'},
+      {en:'She can run fast.',zh:'她跑得很快。'},
+      {en:'Can he draw? No, he can\'t.',zh:'他会画画吗？不，他不会。'},
+      {en:'I can\'t fly, but I can jump high.',zh:'我不能飞，但我能跳很高。'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 3', title: 'Are you happy?', theme: '情绪',
+    vocab: [
+      {en:'happy',zh:'开心的'},{en:'sad',zh:'难过的'},{en:'hungry',zh:'饿的'},{en:'thirsty',zh:'渴的'},
+      {en:'tired',zh:'累的'},{en:'angry',zh:'生气的'},{en:'scared',zh:'害怕的'},{en:'excited',zh:'兴奋的'},
+      {en:'full',zh:'饱的'},{en:'feel',zh:'感觉'}
+    ],
+    sentences: [
+      {en:'Are you happy?',zh:'你开心吗？'},
+      {en:'I\'m happy because I got a new book.',zh:'我很开心因为我得到了一本新书。'},
+      {en:'He is hungry. Let\'s have lunch.',zh:'他饿了，我们吃午饭吧。'},
+      {en:'She feels tired after running.',zh:'她跑完步感觉很累。'},
+      {en:'Don\'t be scared. It\'s just a game.',zh:'别害怕，只是个游戏。'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 4', title: 'Do you have any cousins?', theme: '家庭',
+    vocab: [
+      {en:'family',zh:'家庭'},{en:'cousin',zh:'表亲'},{en:'uncle',zh:'叔叔'},{en:'aunt',zh:'阿姨'},
+      {en:'grandfather',zh:'爷爷'},{en:'grandmother',zh:'奶奶'},{en:'parents',zh:'父母'},
+      {en:'son',zh:'儿子'},{en:'daughter',zh:'女儿'},{en:'baby',zh:'婴儿'}
+    ],
+    sentences: [
+      {en:'Do you have any cousins?',zh:'你有表亲吗？'},
+      {en:'Yes, I have two cousins. They are very nice.',zh:'有，我有两个表亲，他们很好。'},
+      {en:'My uncle and aunt live in Shanghai.',zh:'我的叔叔阿姨住在上海。'},
+      {en:'This is my family photo.',zh:'这是我的全家福。'},
+      {en:'I love my grandparents very much.',zh:'我非常爱我的爷爷奶奶。'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 5', title: 'My friends', theme: '朋友',
+    vocab: [
+      {en:'friend',zh:'朋友'},{en:'tall',zh:'高的'},{en:'short',zh:'矮的'},{en:'strong',zh:'强壮的'},
+      {en:'thin',zh:'瘦的'},{en:'kind',zh:'友善的'},{en:'clever',zh:'聪明的'},{en:'funny',zh:'有趣的'},
+      {en:'quiet',zh:'安静的'},{en:'loud',zh:'大声的'}
+    ],
+    sentences: [
+      {en:'My best friend is tall and strong.',zh:'我最好的朋友又高又壮。'},
+      {en:'She has long hair and big eyes.',zh:'她有长头发和大眼睛。'},
+      {en:'He is very clever. He can solve many problems.',zh:'他很聪明，能解决很多问题。'},
+      {en:'We like to play together after school.',zh:'我们喜欢放学后一起玩。'},
+      {en:'A good friend is kind and helpful.',zh:'好朋友是友善和乐于助人的。'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 6', title: 'My parents', theme: '父母职业',
+    vocab: [
+      {en:'doctor',zh:'医生'},{en:'nurse',zh:'护士'},{en:'teacher',zh:'老师'},{en:'driver',zh:'司机'},
+      {en:'cook',zh:'厨师'},{en:'fireman',zh:'消防员'},{en:'policeman',zh:'警察'},{en:'worker',zh:'工人'},
+      {en:'job',zh:'工作'},{en:'busy',zh:'忙碌的'}
+    ],
+    sentences: [
+      {en:'What does your father do?',zh:'你爸爸是做什么的？'},
+      {en:'My father is a doctor. He helps sick people.',zh:'我爸爸是医生，他帮助病人。'},
+      {en:'My mother is a teacher. She teaches English.',zh:'我妈妈是老师，她教英语。'},
+      {en:'They are very busy but they love me.',zh:'他们很忙但他们爱我。'},
+      {en:'What do you want to be?',zh:'你想成为什么？'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 7', title: 'At school', theme: '学校设施',
+    vocab: [
+      {en:'library',zh:'图书馆'},{en:'office',zh:'办公室'},{en:'toilet',zh:'厕所'},{en:'garden',zh:'花园'},
+      {en:'gym',zh:'体育馆'},{en:'canteen',zh:'食堂'},{en:'computer room',zh:'电脑室'},
+      {en:'music room',zh:'音乐室'},{en:'art room',zh:'美术室'},{en:'floor',zh:'楼层'}
+    ],
+    sentences: [
+      {en:'Where is the library?',zh:'图书馆在哪里？'},
+      {en:'The library is on the second floor.',zh:'图书馆在二楼。'},
+      {en:'There is a big playground in our school.',zh:'我们学校有个大操场。'},
+      {en:'We have lunch in the canteen.',zh:'我们在食堂吃午饭。'},
+      {en:'I like reading in the library after class.',zh:'我喜欢课后在图书馆读书。'}
+    ]
+  },
+  {
+    grade: '四上', unit: 'Unit 8', title: 'At the shop', theme: '购物',
+    vocab: [
+      {en:'shop',zh:'商店'},{en:'buy',zh:'买'},{en:'money',zh:'钱'},{en:'yuan',zh:'元'},
+      {en:'cheap',zh:'便宜的'},{en:'expensive',zh:'贵的'},{en:'food',zh:'食物'},{en:'drink',zh:'饮料'},
+      {en:'toy',zh:'玩具'},{en:'bookshop',zh:'书店'}
+    ],
+    sentences: [
+      {en:'Can I help you?',zh:'需要帮忙吗？'},
+      {en:'I want to buy a book. How much is it?',zh:'我想买本书，多少钱？'},
+      {en:'It\'s ten yuan. It\'s very cheap.',zh:'十元，很便宜。'},
+      {en:'Would you like some water?',zh:'你想喝水吗？'},
+      {en:'I\'d like a toy, please.',zh:'我想要一个玩具。'}
+    ]
+  }
+];
+
+// ==================== Timer ====================
+const TOTAL_SECONDS = 15 * 60;
+const CIRCUMFERENCE = 2 * Math.PI * 44; // ~276.46
+
+let timerRunning = false;
+let timerPaused = false;
+let remainingSeconds = TOTAL_SECONDS;
+let timerInterval = null;
+let speechSynth = window.speechSynthesis;
+let currentUnitIdx = 0;
+
+function updateTimerDisplay() {
+  const m = Math.floor(remainingSeconds / 60);
+  const s = remainingSeconds % 60;
+  document.getElementById('timer-display').textContent = `${m}:${String(s).padStart(2,'0')}`;
+  
+  const progress = remainingSeconds / TOTAL_SECONDS;
+  const offset = CIRCUMFERENCE * (1 - progress);
+  document.getElementById('timer-circle').style.strokeDashoffset = offset;
+  
+  if (progress < 0.2) {
+    document.getElementById('timer-circle').style.stroke = '#ffa07a';
+  } else {
+    document.getElementById('timer-circle').style.stroke = 'var(--primary)';
+  }
+}
+
+function startTimer() {
+  if (timerRunning && !timerPaused) return;
+  
+  if (!timerPaused) {
+    remainingSeconds = TOTAL_SECONDS;
+  }
+  
+  timerRunning = true;
+  timerPaused = false;
+  document.getElementById('btn-start').textContent = '▶ 进行中...';
+  document.getElementById('btn-start').disabled = true;
+  document.getElementById('btn-pause').disabled = false;
+  document.getElementById('timer-status').textContent = '正在磨耳朵...';
+  
+  updateTimerDisplay();
+  
+  timerInterval = setInterval(() => {
+    remainingSeconds--;
+    updateTimerDisplay();
+    
+    if (remainingSeconds <= 0) {
+      completeTimer();
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  if (!timerRunning || timerPaused) return;
+  timerPaused = true;
+  clearInterval(timerInterval);
+  document.getElementById('btn-start').textContent = '▶ 继续';
+  document.getElementById('btn-start').disabled = false;
+  document.getElementById('btn-pause').disabled = true;
+  document.getElementById('timer-status').textContent = '已暂停';
+}
+
+function completeTimer() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timerPaused = false;
+  remainingSeconds = TOTAL_SECONDS;
+  updateTimerDisplay();
+  document.getElementById('btn-start').textContent = '▶ 重新开始';
+  document.getElementById('btn-start').disabled = false;
+  document.getElementById('btn-pause').disabled = true;
+  document.getElementById('timer-status').textContent = '完成！';
+  document.getElementById('complete-overlay').classList.add('show');
+  
+  // 停止朗读
+  speechSynth.cancel();
+  
+  // 记录完成日期
+  const today = new Date().toISOString().slice(0,10);
+  const done = JSON.parse(localStorage.getItem('english_done') || '[]');
+  if (!done.includes(today)) {
+    done.push(today);
+    localStorage.setItem('english_done', JSON.stringify(done));
+  }
+}
+
+function closeComplete() {
+  document.getElementById('complete-overlay').classList.remove('show');
+}
+
+// ==================== TTS ====================
+function speak(text, lang) {
+  speechSynth.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang || 'en-US';
+  u.rate = 0.85;
+  u.pitch = 1;
+  speechSynth.speak(u);
+}
+
+// ==================== Content Render ====================
+function renderUnitButtons() {
+  const container = document.getElementById('unit-buttons');
+  let html = '';
+  let lastGrade = '';
+  for (let i = 0; i < UNITS.length; i++) {
+    if (UNITS[i].grade !== lastGrade) {
+      lastGrade = UNITS[i].grade;
+      html += `<span style="font-size:0.7rem;color:var(--text-light);margin:0 4px;align-self:center;">|</span>`;
+    }
+    html += `<button class="unit-btn ${i === currentUnitIdx ? 'active' : ''}" onclick="selectUnit(${i})">${UNITS[i].unit}</button>`;
+  }
+  container.innerHTML = html;
+}
+
+function selectUnit(idx) {
+  currentUnitIdx = idx;
+  renderUnitButtons();
+  renderUnitContent();
+}
+
+function renderUnitContent() {
+  const u = UNITS[currentUnitIdx];
+  const container = document.getElementById('unit-content');
+  
+  let html = '';
+  html += `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+    <div><strong style="font-size:1rem;color:#3d7a5c;">${u.grade} ${u.unit}</strong>
+    <span style="font-size:0.8rem;color:var(--text-light);margin-left:8px;">${u.title}</span></div>
+    <span style="font-size:0.7rem;background:#e8f5ee;padding:3px 10px;border-radius:12px;color:var(--primary-dark);">${u.theme}</span>
+  </div>`;
+  
+  // 词汇
+  html += '<div class="section-label">📖 核心词汇 <span style="font-weight:400;font-size:0.7rem;cursor:pointer;color:var(--primary);" onclick="speakVocab()">🔊 跟读</span></div>';
+  html += '<div class="vocab-list">';
+  for (const v of u.vocab) {
+    html += `<div class="vocab-chip" onclick="speak('${v.en.replace(/'/g,"\\'")}', 'en-US')"><span class="en">${v.en}</span> <span class="zh">${v.zh}</span></div>`;
+  }
+  html += '</div>';
+  
+  // 句型
+  html += '<div class="section-label">💬 重点句型 <span style="font-weight:400;font-size:0.7rem;cursor:pointer;color:var(--primary);" onclick="speakSentences()">🔊 播放全部</span></div>';
+  for (const s of u.sentences) {
+    html += `<div class="sentence-item" onclick="speak('${s.en.replace(/'/g,"\\'")}', 'en-US')">
+      <div class="en">${s.en}</div>
+      <div class="zh">${s.zh}</div>
+    </div>`;
+  }
+  
+  container.innerHTML = html;
+}
+
+function speakVocab() {
+  const u = UNITS[currentUnitIdx];
+  const words = u.vocab.map(v => v.en).join('. ');
+  speak(words, 'en-US');
+  showToast('🔊 朗读核心词汇中...');
+}
+
+function speakSentences() {
+  const u = UNITS[currentUnitIdx];
+  const text = u.sentences.map(s => s.en).join('. ');
+  speak(text, 'en-US');
+  showToast('🔊 朗读重点句型中...');
+}
+
+// ==================== Toast ====================
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+// ==================== Init ====================
+function init() {
+  renderUnitButtons();
+  renderUnitContent();
+  updateTimerDisplay();
+  
+  // 检查今天是否已完成
+  const today = new Date().toISOString().slice(0,10);
+  const done = JSON.parse(localStorage.getItem('english_done') || '[]');
+  if (done.includes(today)) {
+    document.getElementById('timer-status').textContent = '✅ 今天已完成磨耳朵';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
