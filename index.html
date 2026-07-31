@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>高兴的毛茸茸守护计划</title>
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAGpElEQVR4nO3csXbUOhRG4TNZPFLS3p6XID0tPaykp6XnvgQ9LfNO3OLi4Di2R7Yl65z/7G8tmgAZWdpRNJ5JLtbR51/ff/d8fLTz/PB46fG4pz0o8eKMyJs+ABFjSau4m3xSQkap2mFX/WSEjL1qhV3lkxAyajka9t3RARAzajra06GgiRktHOlq1/ZOyDjL1iPI5h2amHGmrb1tCpqY0cOW7oqDJmb0VNpfUdDEDA9KOrwZNDHDk1s9Hr4PDXiyGjS7Mzxa63IxaGKGZ0t9zgZNzIhgrlPO0JDyJmh2Z0Qy7ZUdGlJeBc3ujIjG3bJDQ8pL0OzOiGzolx0aUggaUi5mHDeggx0aUggaUggaUggaUu54Qggl73oPQM3T/YfN/+fL9d8GI8mJoA/aE/Ctz0Hg+xH0DjUiLv38xL0NQW/QOuS1xyTsMgRdoEfIS2Mg7HXctoMUgoYUgr7Bw3FjzNt4vCFoSCFoSCFoSCHoFV7Pq17H5QFBQwpBL/C+C3ofXy8EPSNKLFHGeSaCnogWSbTxtkbQI1HjiDruFgj6j+hRRB9/LWmCXlrwp/sPMjGsXYvKNd5yyfAzhVkWs4T620/T7NDIQT5odufX1OdDPmjkIh20+m60l/K88DOFK+7v79987Hq9ph1HBLJ3OY7sQnMBTZ0RVOtxKN7xkD5y7DFEdL1eX/6s/Tv1cURD0CPjiMbOjsnLOCKSDPrIcWMpmrPPrGeMQ/HJoWTQe+zd5Wrvjl7GERVBQwpBTyztdGfvgF7GEY1c0DXOhdNoekV0xjjUztG8sLLAy07oZRxRyO3Qe+29e1D77oeXcURF0JBC0CNbd7lWu6KXcURE0BOlcbSOyMs4ouFJ4Ywhkt7vcvMyjkgIeoWXaLyMI4I8Qf/4+fTmY+//+dJhJOfIdr1/6Ac9t7DTv1Na6GzXO6H9pHBtcff8O++yXe8M7aCRju6RY+su9OPnU5NvxV8/vv3Yp2/VH8bN9XYmt0O7+Tm5rx/nY771dydzM1+VyAXtQmmsTqJWohv01m+n0b/9ZrveBbpB97J112WXrkoy6JdzYekupLJbbbxetfOzmfJdjsGwyFleOct2vRP6QQ/OWsxP37YdI1rcwjNLEe8cySOHmea305pU50c26K5Kd91Wu3Nisr+scdD9p5rPeqVwA9Xd2SzTGboXduFTyR85lHejPdTnQz5o5JIiaPVdqVSGeUgRNPJIE3SG3WlNlutPE7RZnkWdynTdqYI2y7W4ZvmuN13Q0JYy6Cy7VpbrHEsZtJn+Yqtf35K0QZvpLrrqdZVIHbSZ3uKrXc9WvDnJ/kbQ/Z15B2QPeZB+hx6LGkXUcbdA0BPR4og23tY4coxEPHIMYybs/6UPOmLEc8bXkTnutEGrhDwn866dLmjlkKcyhp0m6EwhT2UKWz7ozCFPZQhbNmhCXqYctlzQhFxOMWypF1aIeR+leZMJWmlRelCZv/BHDpWF8EDhCBJ6hybmNiLPa9igI096BFHnN2TQUSc7mojzHC7oiJMcWbT5DhV0tMlVEWnewwQdaVIVRZn/EEFHmUx1EdYhRNBAKfdBR9gVMvG+Hq6D9j55WXleF9dBA1u5DdrzLgC/6+M2aGAPl0F7/erHax7XyWXQwF7ugvb4VY9l3tbLXdDAEQQNKQQNKa6C9nYeQxlP6+YqaOAogoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUV0FH/q2XmXlaN1dBA0cRNKQQNKS4C9rTeQy3eVsvd0EDR7gM2ttXPeZ5XKe754fHS+9BALW43KHNfH714y+v6+M2aGAP10F73QWy87wuroM28z15GXlfjzszM54YQsHzw+PF/Q5t5n9XyCLCOoQI2izGZCqLMv8vQUc4dkSZVDUR5n3oN8wOPYgwuUqizferoCPs0mbxJjmqKPM87jbcDj2IMtlRRZ3fN0FH2aXN4k66d5Hmddrru14DqWWYfE+/ATOqSCEvmT1yRNqlBwqL0VPE+ZvrdPEMTdR5RJy3pT5vRvv51/ff9YfTHkeQ2yKGbLa+2YY/Qy/hbL0sasglio4VUXfpMcLWCPnWUbj4nKwQtVnOsBVCNit7XrfpiZ9K1GY5wlYJ2az8JsXmOxlKUZtphq0Ustm2O267bs2pRT2IHLdaxIOtt48P3WtWDXvgOXDVgAd7Xwc5/OKJetRjPQNXD3jsyIt6VV4NzBT1khqxZ4p2ydFXqKu+vE3Y2KvWWy2avF+DsFGq9nuGmr4BibCxpNWb3057Rx1x44x3cP4HnxN/2eZcx8YAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#7ecba1">
+<meta name="apple-mobile-web-app-title" content="毛茸茸守护">
+<meta name="theme-color" content="#7ecba1">
+<style>
+/* ========== Reset & Base ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #f0f7f4;
+  --card: #ffffff;
+  --primary: #7ecba1;
+  --primary-dark: #5db88b;
+  --text: #4a6b5d;
+  --text-light: #7a9a8b;
+  --border: #e0ede5;
+  --warn: #ffa07a;
+  --warn-light: #fff0e8;
+  --shadow: 0 2px 12px rgba(126,203,161,0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  background-image: radial-gradient(ellipse at top, #e8f5ee 0%, #f0f7f4 60%);
+}
+
+/* ========== Header ========== */
+.header {
+  text-align: center;
+  padding: 28px 20px 16px;
+  background: linear-gradient(135deg, #d4f0e0, #f0f7f4);
+  border-bottom: 2px solid var(--border);
+}
+.header h1 {
+  font-size: 2rem;
+  color: #3d7a5c;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.header h1 .icon { font-size: 2.2rem; }
+.header .subtitle {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-top: 4px;
+  letter-spacing: 4px;
+}
+
+/* ========== Layout ========== */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+@media (max-width: 1100px) {
+  .main-container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .main-container { grid-template-columns: 1fr; }
+}
+
+/* ========== Card ========== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 20px rgba(126,203,161,0.2); }
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3d7a5c;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+.card-title .emoji { font-size: 1.4rem; }
+
+/* ========== Task Groups ========== */
+.task-group { margin-bottom: 16px; }
+.task-group-header {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: #f5faf7;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.task-group-header .time-icon { font-size: 1rem; }
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.task-item:hover { background: #f9fdfb; }
+.task-item.done { background: #f0faf5; }
+.task-item.done .task-label { text-decoration: line-through; color: var(--text-light); }
+
+/* Custom checkbox */
+.checkbox {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s;
+  background: #fff;
+}
+.checkbox.checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.checkbox.checked::after {
+  content: "✓";
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+.task-label { font-size: 0.9rem; flex: 1; }
+.task-hint { font-size: 0.78rem; color: var(--text-light); }
+
+/* ========== Period Tasks ========== */
+.period-task {
+  padding: 10px 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  background: #fcfefd;
+}
+.period-task .pt-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.period-task .pt-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: #fff3e0;
+  color: #e08b5a;
+  font-weight: 600;
+}
+.period-task .pt-title { font-weight: 600; font-size: 0.9rem; }
+.period-task .pt-btn {
+  padding: 5px 14px;
+  border: none; border-radius: 20px;
+  background: var(--primary);
+  color: #fff; font-size: 0.82rem;
+  cursor: pointer; font-weight: 600;
+  transition: all 0.2s;
+}
+.period-task .pt-btn:hover { background: var(--primary-dark); transform: scale(1.03); }
+.period-task .pt-btn.done-btn { background: #d4e8db; color: var(--text-light); cursor: default; }
+.period-task .pt-btn.done-btn:hover { transform: none; }
+.period-task .pt-desc { font-size: 0.78rem; color: var(--text-light); margin-top: 4px; }
+
+/* ========== Modal ========== */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 100;
+  align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px;
+  max-width: 580px; width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+}
+.modal h3 { font-size: 1.2rem; color: #3d7a5c; margin-bottom: 16px; }
+.modal .step { margin-bottom: 18px; }
+.modal .step-label {
+  font-size: 0.85rem; font-weight: 700; color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+.modal input[type="text"], .modal textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text);
+  transition: border 0.2s;
+  resize: vertical;
+}
+.modal input:focus, .modal textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.modal textarea { min-height: 80px; }
+.modal .btn-row {
+  display: flex; gap: 10px; justify-content: flex-end;
+  margin-top: 20px;
+}
+.modal .btn-row button {
+  padding: 10px 24px;
+  border: none; border-radius: 24px;
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.modal .btn-save {
+  background: var(--primary); color: #fff;
+}
+.modal .btn-save:hover { background: var(--primary-dark); }
+.modal .btn-cancel {
+  background: #f0f0f0; color: #666;
+}
+.modal .btn-cancel:hover { background: #e0e0e0; }
+.modal .ref-skeleton {
+  background: #f5faf7;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.modal .ref-skeleton strong { color: var(--primary-dark); }
+.modal .read-aloud-hint {
+  background: #fff8e1;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: #b8860b;
+  margin-top: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* ========== Pets ========== */
+.pet-area { text-align: center; }
+.inventory-bar {
+  display: flex; gap: 14px; justify-content: center;
+  margin-bottom: 16px;
+}
+.inv-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px;
+  background: #f5faf7;
+  border-radius: 24px;
+  font-size: 0.85rem; font-weight: 600;
+}
+.inv-item .count {
+  background: var(--primary);
+  color: #fff;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* 宠物展示区 — 单只滑动 */
+.pet-showcase {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+}
+.pet-stage-container {
+  position: absolute;
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+  display: flex; flex-direction: column; align-items: center;
+  pointer-events: none;
+}
+.pet-stage-container.active { opacity: 1; pointer-events: auto; }
+.pet-stage-container.left { opacity: 0; transform: translateX(-60px); }
+.pet-stage-container.right { opacity: 0; transform: translateX(60px); }
+
+.pet-main-card {
+  width: 200px; padding: 20px 16px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fafff8, #eaf7ef);
+  border: 2px solid var(--border);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+.pet-main-card:hover { box-shadow: 0 4px 20px rgba(126,203,161,0.25); }
+.pet-main-card.empty-card {
+  border-style: dashed; color: var(--text-light);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; min-height: 180px;
+}
+
+.pet-svg-wrap {
+  display: inline-block;
+  transition: all 0.4s;
+  user-select: none;
+}
+.pet-svg-wrap svg { display: block; margin: 0 auto; }
+.pet-svg-wrap.egg-anim { animation: eggShake 0.4s infinite alternate; }
+.pet-svg-wrap.baby-anim { animation: petBounce 1.2s infinite; }
+.pet-svg-wrap.growing-anim { animation: petGrow 2s infinite; }
+.pet-svg-wrap.adult-anim { animation: petSparkle 2s infinite; }
+.pet-svg-wrap.eating { animation: petEat 0.6s ease-in-out; }
+.pet-svg-wrap.evolving { animation: petEvolve 0.8s ease-out; }
+.pet-svg-wrap.petting { animation: petPet 0.5s ease-in-out; }
+
+@keyframes eggShake { 0%{transform:rotate(-6deg)} 100%{transform:rotate(6deg)} }
+@keyframes petBounce { 0%,100%{transform:translateY(0) scale(1)} 30%{transform:translateY(-10px) scale(1.05)} 60%{transform:translateY(0) scale(1)} }
+@keyframes petGrow { 0%,100%{transform:scale(1)} 25%{transform:scale(1.06) rotate(-2deg)} 75%{transform:scale(1.06) rotate(2deg)} }
+@keyframes petSparkle { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+@keyframes petEat { 0%{transform:scale(1)} 30%{transform:scale(1.2)} 60%{transform:scale(0.9)} 100%{transform:scale(1)} }
+@keyframes petEvolve { 0%{transform:scale(0.5);opacity:0} 50%{transform:scale(1.2);opacity:1} 100%{transform:scale(1);opacity:1} }
+@keyframes petPet { 0%{transform:translateY(0)} 25%{transform:translateY(-4px)} 50%{transform:translateY(0)} 75%{transform:translateY(-4px)} 100%{transform:translateY(0)} }
+
+/* 进化光环 */
+.evolve-ring {
+  position: absolute; inset: -8px;
+  border-radius: 24px;
+  border: 3px solid transparent;
+  pointer-events: none;
+}
+.evolve-ring.active {
+  border-color: #ffb347;
+  animation: ringPulse 0.8s ease-out forwards;
+}
+@keyframes ringPulse { 0%{inset:-8px;opacity:1;border-width:3px} 100%{inset:-24px;opacity:0;border-width:6px} }
+
+.pet-name-large { font-weight: 700; font-size: 1rem; margin: 6px 0 2px; color: #3d7a5c; }
+.pet-stage-label { font-size: 0.78rem; color: var(--primary-dark); margin-bottom: 6px; }
+.pet-growth-bar {
+  height: 8px; background: #e0ede5;
+  border-radius: 10px; overflow: hidden;
+  margin: 0 12px 8px;
+}
+.pet-growth-fill {
+  height: 100%; background: linear-gradient(90deg, #7ecba1, #5db88b);
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+.pet-growth-text { font-size: 0.72rem; color: var(--text-light); }
+
+/* 宠物导航 */
+.pet-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin: 8px 0 12px;
+}
+.pet-nav-arrow {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  color: var(--primary-dark);
+}
+.pet-nav-arrow:hover { background: #e8f5ee; border-color: var(--primary); }
+.pet-nav-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.pet-nav-dots { display: flex; gap: 6px; }
+.pet-nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border); transition: all 0.3s;
+}
+.pet-nav-dot.active { background: var(--primary); width: 20px; border-radius: 4px; }
+.pet-nav-count { font-size: 0.78rem; color: var(--text-light); min-width: 40px; text-align: center; }
+
+/* 交互按钮区 */
+.pet-actions {
+  display: flex; gap: 10px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 8px;
+}
+.pet-action-btn {
+  padding: 8px 18px; border: none;
+  border-radius: 24px; font-size: 0.85rem;
+  font-weight: 600; cursor: pointer;
+  transition: all 0.25s;
+  display: flex; align-items: center; gap: 4px;
+}
+.btn-feed { background: var(--primary); color: #fff; }
+.btn-feed:hover { background: var(--primary-dark); transform: scale(1.05); }
+.btn-feed:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+.btn-pet { background: #fff0e8; color: #e08b5a; }
+.btn-pet:hover { background: #ffe0cc; transform: scale(1.05); }
+
+.btn-hatch {
+  padding: 10px 24px; border: none;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  color: #fff; font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-hatch:hover { transform: scale(1.06); box-shadow: 0 4px 14px rgba(255,140,0,0.3); }
+.btn-hatch:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* 进化粒子 */
+.evolve-particle {
+  position: absolute; font-size: 1.5rem;
+  pointer-events: none; z-index: 10;
+  animation: particleBurst 1s forwards;
+}
+@keyframes particleBurst {
+  0%{opacity:1;transform:translate(0,0) scale(0.5)}
+  100%{opacity:0;transform:translate(var(--px), var(--py)) scale(1.5)}
+}
+
+/* ========== Rewards ========== */
+.rewards-list { margin-top: 12px; }
+.reward-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  transition: all 0.3s;
+}
+.reward-item.unlocked {
+  background: linear-gradient(135deg, #fff9c4, #fff8e1);
+  border: 1px solid #ffe082;
+  animation: rewardGlow 2s infinite;
+}
+.reward-item.locked { background: #f8f8f8; opacity: 0.7; }
+@keyframes rewardGlow {
+  0%,100%{box-shadow:0 0 4px rgba(255,183,77,0.3)}
+  50%{box-shadow:0 0 14px rgba(255,183,77,0.6)}
+}
+.reward-emoji { font-size: 1.6rem; }
+.reward-info { flex: 1; }
+.reward-name { font-weight: 700; font-size: 0.9rem; }
+.reward-cond { font-size: 0.75rem; color: var(--text-light); }
+.reward-badge {
+  font-size: 0.7rem; padding: 3px 10px;
+  border-radius: 20px; font-weight: 700;
+}
+.reward-badge.unlocked { background: #ffb347; color: #fff; }
+.reward-badge.locked { background: #e0e0e0; color: #999; }
+
+/* ========== Calendar ========== */
+.cal-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-bottom: 12px;
+}
+.cal-nav button {
+  background: none; border: none; font-size: 1.2rem;
+  cursor: pointer; color: var(--primary-dark);
+  padding: 4px 8px; border-radius: 8px;
+  transition: background 0.2s;
+}
+.cal-nav button:hover { background: #e8f5ee; }
+.cal-nav .month-label { font-weight: 700; font-size: 1rem; min-width: 100px; text-align: center; }
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px; text-align: center;
+}
+.cal-day-header {
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--text-light); padding: 6px 0;
+}
+.cal-day {
+  aspect-ratio: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  border-radius: 10px;
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.cal-day:hover { background: #e8f5ee; }
+.cal-day.today { border: 2px solid var(--primary); font-weight: 800; }
+.cal-day.other-month { color: #ccc; }
+.cal-day.full { background: #d4f0e0; color: #3d7a5c; }
+.cal-day.partial { background: #fff8e1; color: #b8860b; }
+.cal-day.miss { background: #ffe8e0; color: #c0392b; }
+.cal-day .day-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  margin-top: 2px;
+}
+.cal-day.full .day-dot { background: var(--primary); }
+.cal-day.partial .day-dot { background: #ffb347; }
+.cal-day.miss .day-dot { background: #e74c3c; }
+
+.cal-stats {
+  margin-top: 14px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.stat-chip {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem; font-weight: 600;
+}
+.stat-chip.full { background: #d4f0e0; color: #3d7a5c; }
+.stat-chip.partial { background: #fff8e1; color: #b8860b; }
+.stat-chip.miss { background: #ffe8e0; color: #c0392b; }
+.stat-chip.streak { background: #e8f0ff; color: #4a6db5; }
+
+.miss-list { margin-top: 8px; font-size: 0.8rem; }
+.miss-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 10px; background: #fef5f2; border-radius: 8px;
+  margin-bottom: 4px;
+}
+.miss-note { font-size: 0.7rem; color: var(--text-light); max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ========== Footer ========== */
+.footer {
+  max-width: 1400px; margin: 0 auto 30px;
+  padding: 0 20px;
+}
+.footer-card { margin-top: 0; }
+.settings-row {
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 10px;
+}
+.settings-row label { font-weight: 600; font-size: 0.85rem; white-space: nowrap; }
+.settings-row input, .settings-row select {
+  padding: 8px 14px; border: 2px solid var(--border);
+  border-radius: 20px; font-size: 0.85rem; font-family: inherit;
+  color: var(--text); transition: border 0.2s;
+}
+.settings-row input:focus { outline: none; border-color: var(--primary); }
+.settings-row input[type="password"] { font-family: monospace; }
+.settings-row .btn-sm {
+  padding: 7px 16px; border: none; border-radius: 20px;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-report { background: var(--primary); color: #fff; }
+.btn-report:hover { background: var(--primary-dark); }
+.btn-test { background: #e8f5ee; color: var(--primary-dark); }
+.btn-test:hover { background: #d4f0e0; }
+
+.toast {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+  background: #3d7a5c; color: #fff;
+  padding: 10px 24px; border-radius: 24px;
+  font-size: 0.9rem; font-weight: 600;
+  z-index: 200; opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; }
+
+.heart-particle {
+  position: fixed; font-size: 1.4rem;
+  pointer-events: none; z-index: 150;
+  animation: floatUp 1.5s forwards;
+}
+@keyframes floatUp {
+  0%{opacity:1;transform:translateY(0) scale(1)}
+  100%{opacity:0;transform:translateY(-120px) scale(1.5)}
+}
+
+.miss-note-input {
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 120px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="icon">🌿</span> 高兴的毛茸茸守护计划</h1>
+  <div class="subtitle">✦ 暑期学习工作台 ✦</div>
+</div>
+
+<div class="main-container">
+  <!-- ======= 第一栏：作业一览 ======= -->
+  <div class="card" id="col-tasks">
+    <div class="card-title"><span class="emoji">📚</span> 作业一览</div>
+    <div id="tasks-content"></div>
+  </div>
+
+  <!-- ======= 第二栏：奖励中心 ======= -->
+  <div class="card" id="col-rewards">
+    <div class="card-title"><span class="emoji">🎁</span> 奖励中心</div>
+    <div id="rewards-content"></div>
+  </div>
+
+  <!-- ======= 第三栏：打卡日历 ======= -->
+  <div class="card" id="col-calendar">
+    <div class="card-title"><span class="emoji">📅</span> 打卡日历</div>
+    <div id="calendar-content"></div>
+  </div>
+</div>
+
+<!-- 底部设置 -->
+<div class="footer">
+  <div class="card footer-card">
+    <div class="card-title"><span class="emoji">⚙️</span> 设置 & 家长报告</div>
+    <div class="settings-row">
+      <label>🔑 Server酱 SendKey：</label>
+      <input type="password" id="sendkey-input" placeholder="输入 SCT 开头的 SendKey" style="width:240px;">
+      <button class="btn-sm btn-test" onclick="saveSettings()">💾 保存</button>
+      <button class="btn-sm btn-test" onclick="testPush()">📤 测试推送</button>
+    </div>
+    <div class="settings-row">
+      <label>⏰ 定时提醒：</label>
+      <input type="time" id="reminder-time" value="20:00" onchange="saveSettings()">
+      <button class="btn-sm btn-report" onclick="generateReport()">📋 生成今日报告</button>
+      <button class="btn-sm btn-test" onclick="generateWeekReport()">📊 本周报告</button>
+      <span style="font-size:0.75rem;color:var(--text-light);margin-left:8px;" id="reminder-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- 作文弹窗 -->
+<div class="modal-overlay" id="essay-modal">
+  <div class="modal" id="essay-modal-content"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ==================== 数据层 ====================
+const STORAGE_KEY = 'maorongrong_data';
+const PET_TYPES = ['cat','rabbit','bear','dog','panda','fox','koala','tiger'];
+const PET_NAMES = ['毛球','团团','胖胖','花花','豆豆','果果','乐乐','悠悠','小橘','雪球','点点','圆圆'];
+const PET_COLORS = {
+  cat: ['#ffb347','#ff8c69','#fff'],
+  rabbit: ['#f8f8f8','#ffb6c1','#ff8c69'],
+  bear: ['#c4956a','#e8c9a0','#8b6914'],
+  dog: ['#f5deb3','#e8c9a0','#d2b48c'],
+  panda: ['#fff','#333','#f5f5f5'],
+  fox: ['#ff8c00','#fff','#333'],
+  koala: ['#9e9e9e','#757575','#e0e0e0'],
+  tiger: ['#ff8c00','#fff','#333']
+};
+const GROWTH_MAX = 5;
+const MAX_PETS = 3;
+const START_DATE = '2026-07-01';
+
+// SVG 宠物生成 — 四个阶段：蛋/幼崽/成长中/成年
+function getPetSVG(type, stage) {
+  // stage: egg, baby, growing, adult
+  const colors = PET_COLORS[type] || PET_COLORS.cat;
+  const [c1, c2, c3] = colors;
+
+  // 蛋阶段
+  if (stage === 'egg') {
+    return `<svg viewBox="0 0 120 140" width="100" height="116">
+      <defs><radialGradient id="eggGrad" cx="40%" cy="30%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="${c1}"/></radialGradient></defs>
+      <ellipse cx="60" cy="75" rx="38" ry="48" fill="url(#eggGrad)" stroke="${c2}" stroke-width="2"/>
+      <ellipse cx="45" cy="55" rx="12" ry="8" fill="#fff" opacity="0.5"/>
+      <circle cx="62" cy="80" r="5" fill="${c2}" opacity="0.6"/>
+      <circle cx="50" cy="95" r="3" fill="${c2}" opacity="0.4"/>
+      <circle cx="68" cy="65" r="3" fill="${c2}" opacity="0.4"/>
+    </svg>`;
+  }
+
+  // 身体比例随阶段变化
+  const scale = stage === 'baby' ? 0.6 : (stage === 'growing' ? 0.8 : 1);
+  const bodyW = 44 * scale, bodyH = 52 * scale;
+  const headR = 22 * scale;
+  const cx = 60, bodyY = 55, headY = bodyY - headR * 0.8;
+
+  // 通用身体 + 头
+  let svg = `<svg viewBox="0 0 120 140" width="100" height="116">`;
+
+  // 尾巴（成年才有明显尾巴）
+  if (stage === 'adult' || stage === 'growing') {
+    svg += `<path d="M${cx+bodyW/2-2} ${bodyY+bodyH*0.6} Q${cx+bodyW/2+16*scale} ${bodyY+bodyH*0.2} ${cx+bodyW/2+8*scale} ${bodyY+bodyH*0.4}" stroke="${c1}" stroke-width="${3*scale}" fill="none" stroke-linecap="round"/>`;
+  }
+
+  // 身体
+  svg += `<ellipse cx="${cx}" cy="${bodyY+bodyH/2}" rx="${bodyW/2}" ry="${bodyH/2}" fill="${c1}" stroke="${c2}" stroke-width="1.5"/>`;
+  // 肚皮
+  svg += `<ellipse cx="${cx}" cy="${bodyY+bodyH/2+2}" rx="${bodyW*0.28}" ry="${bodyH*0.35}" fill="#fff" opacity="0.6"/>`;
+
+  // 脚
+  const footY = bodyY + bodyH;
+  svg += `<ellipse cx="${cx-bodyW*0.22}" cy="${footY-2}" rx="${7*scale}" ry="${5*scale}" fill="${c1}" stroke="${c2}" stroke-width="1"/>`;
+  svg += `<ellipse cx="${cx+bodyW*0.22}" cy="${footY-2}" rx="${7*scale}" ry="${5*scale}" fill="${c1}" stroke="${c2}" stroke-width="1"/>`;
+
+  // 手（成年伸出手）
+  const armExt = stage === 'adult' ? 1.3 : 1;
+  svg += `<ellipse cx="${cx-bodyW*0.5*armExt}" cy="${bodyY+bodyH*0.35}" rx="${6*scale}" ry="${10*scale}" fill="${c1}" stroke="${c2}" stroke-width="1" transform="rotate(15,${cx-bodyW*0.5*armExt},${bodyY+bodyH*0.35})"/>`;
+  svg += `<ellipse cx="${cx+bodyW*0.5*armExt}" cy="${bodyY+bodyH*0.35}" rx="${6*scale}" ry="${10*scale}" fill="${c1}" stroke="${c2}" stroke-width="1" transform="rotate(-15,${cx+bodyW*0.5*armExt},${bodyY+bodyH*0.35})"/>`;
+
+  // 头
+  svg += `<circle cx="${cx}" cy="${headY}" r="${headR}" fill="${c1}" stroke="${c2}" stroke-width="1.5"/>`;
+
+  // 耳朵
+  const earH = headR * 0.7;
+  svg += `<ellipse cx="${cx-headR*0.65}" cy="${headY-headR*0.65}" rx="${headR*0.35}" ry="${earH}" fill="${c1}" stroke="${c2}" stroke-width="1"/>`;
+  svg += `<ellipse cx="${cx+headR*0.65}" cy="${headY-headR*0.65}" rx="${headR*0.35}" ry="${earH}" fill="${c1}" stroke="${c2}" stroke-width="1"/>`;
+  // 内耳
+  svg += `<ellipse cx="${cx-headR*0.65}" cy="${headY-headR*0.65}" rx="${headR*0.2}" ry="${earH*0.55}" fill="#ffb6c1" opacity="0.6"/>`;
+  svg += `<ellipse cx="${cx+headR*0.65}" cy="${headY-headR*0.65}" rx="${headR*0.2}" ry="${earH*0.55}" fill="#ffb6c1" opacity="0.6"/>`;
+
+  // 眼睛
+  const eyeY = headY - headR * 0.1;
+  const eyeSpacing = headR * 0.45;
+  svg += `<circle cx="${cx-eyeSpacing}" cy="${eyeY}" r="${headR*0.22}" fill="#fff"/>`;
+  svg += `<circle cx="${cx+eyeSpacing}" cy="${eyeY}" r="${headR*0.22}" fill="#fff"/>`;
+  svg += `<circle cx="${cx-eyeSpacing}" cy="${eyeY}" r="${headR*0.12}" fill="#333"/>`;
+  svg += `<circle cx="${cx+eyeSpacing}" cy="${eyeY}" r="${headR*0.12}" fill="#333"/>`;
+  // 眼睛高光
+  svg += `<circle cx="${cx-eyeSpacing-headR*0.06}" cy="${eyeY-headR*0.06}" r="${headR*0.05}" fill="#fff"/>`;
+  svg += `<circle cx="${cx+eyeSpacing-headR*0.06}" cy="${eyeY-headR*0.06}" r="${headR*0.05}" fill="#fff"/>`;
+
+  // 鼻子
+  svg += `<ellipse cx="${cx}" cy="${eyeY+headR*0.35}" rx="${headR*0.13}" ry="${headR*0.1}" fill="#ff8c69"/>`;
+
+  // 嘴巴
+  svg += `<path d="M${cx-headR*0.15} ${eyeY+headR*0.5} Q${cx} ${eyeY+headR*0.7} ${cx+headR*0.15} ${eyeY+headR*0.5}" stroke="#999" stroke-width="0.8" fill="none"/>`;
+
+  // 腮红
+  svg += `<circle cx="${cx-eyeSpacing-headR*0.2}" cy="${eyeY+headR*0.25}" r="${headR*0.15}" fill="#ffb6c1" opacity="0.4"/>`;
+  svg += `<circle cx="${cx+eyeSpacing+headR*0.2}" cy="${eyeY+headR*0.25}" r="${headR*0.15}" fill="#ffb6c1" opacity="0.4"/>`;
+
+  // 蝴蝶结（成年才有）
+  if (stage === 'adult') {
+    const bowY = headY - headR * 0.55;
+    svg += `<path d="M${cx-headR*0.4} ${bowY} Q${cx} ${bowY-headR*0.25} ${cx+headR*0.4} ${bowY} Q${cx} ${bowY+headR*0.15} ${cx-headR*0.4} ${bowY}" fill="#ff6b8a"/>`;
+    svg += `<circle cx="${cx}" cy="${bowY}" r="${headR*0.12}" fill="#ff6b8a"/>`;
+  }
+
+  svg += '</svg>';
+  return svg;
+}
+
+let data;
+
+function defaultData() {
+  return {
+    sendKey: '',
+    reminderTime: '20:00',
+    startDate: START_DATE,
+    tasks: {},
+    pets: [],
+    inventory: { eggs: 3, food: 5 },
+    adultPetsTotal: 0,
+    calendarNotes: {},
+    rewardedDates: [],
+    rewardedTasks: {}
+  };
+}
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    data = raw ? JSON.parse(raw) : defaultData();
+    // 合并默认值
+    const def = defaultData();
+    for (const k of Object.keys(def)) {
+      if (!(k in data)) data[k] = def[k];
+    }
+  } catch(e) {
+    data = defaultData();
+  }
+}
+
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function getTodayStr() {
+  const d = new Date();
+  return d.toISOString().slice(0, 10);
+}
+
+function getTodayTasks() {
+  const today = getTodayStr();
+  if (!data.tasks[today]) {
+    data.tasks[today] = {
+      morning: { summer: false, math: false, english: false, chinese: false },
+      afternoon: { summer: false, math: false, english: false, chinese: false },
+      daily: { reading: false, listening: false, morningRead: false },
+      extra: { readingNote: false, essay: { day: -1, topic: '', skeleton: { opening: '', middle: '', ending: '' }, goodWords: '', draft: '' } }
+    };
+  }
+  return data.tasks[today];
+}
+
+// ==================== 周期判断 ====================
+function daysFromStart(dateStr) {
+  const start = new Date(data.startDate + 'T00:00:00');
+  const target = new Date(dateStr + 'T00:00:00');
+  return Math.floor((target - start) / (1000 * 60 * 60 * 24));
+}
+
+function isReadingNoteDay(dateStr) {
+  const d = daysFromStart(dateStr);
+  if (d < 0) return false;
+  return d % 2 === 0;
+}
+
+function getEssayDay(dateStr) {
+  const d = daysFromStart(dateStr);
+  if (d < 0) return -1;
+  return d % 3; // 0=骨架, 1=初稿, 2=自由
+}
+
+// ==================== 任务检查与奖励 ====================
+// 每个任务完成的奖励值（food单位）
+const TASK_REWARDS = {
+  'morning.summer': 1,
+  'morning.math': 1,
+  'morning.english': 1,
+  'morning.chinese': 1,
+  'afternoon.summer': 1,
+  'afternoon.math': 1,
+  'afternoon.english': 1,
+  'afternoon.chinese': 1,
+  'daily.reading': 2,
+  'daily.listening': 1,
+  'daily.morningRead': 1,
+  'extra.readingNote': 2,
+  'extra.essay.skeleton': 2,
+  'extra.essay.draft': 2
+};
+
+// 记录每个任务是否已经给过奖励（同一天不重复给）
+function getRewardedTasks() {
+  if (!data.rewardedTasks) data.rewardedTasks = {};
+  return data.rewardedTasks;
+}
+
+function isTaskRewarded(taskKey) {
+  const today = getTodayStr();
+  const rt = getRewardedTasks();
+  if (!rt[today]) rt[today] = [];
+  return rt[today].includes(taskKey);
+}
+
+function markTaskRewarded(taskKey) {
+  const today = getTodayStr();
+  const rt = getRewardedTasks();
+  if (!rt[today]) rt[today] = [];
+  rt[today].push(taskKey);
+}
+
+// 给任务完成奖励
+function giveTaskReward(taskKey) {
+  if (isTaskRewarded(taskKey)) return;
+  markTaskRewarded(taskKey);
+
+  const amount = TASK_REWARDS[taskKey] || 1;
+  data.inventory.food += amount;
+  saveData();
+  renderRewards();
+  // 用 +N 飘字
+  spawnFloatingText(`+${amount} 🍖`);
+}
+
+function isAllDone() {
+  const t = getTodayTasks();
+  const allChecks = [
+    t.morning.summer, t.morning.math, t.morning.english, t.morning.chinese,
+    t.afternoon.summer, t.afternoon.math, t.afternoon.english, t.afternoon.chinese,
+    t.daily.reading, t.daily.listening, t.daily.morningRead
+  ];
+  if (!allChecks.every(v => v)) return false;
+
+  const today = getTodayStr();
+  if (isReadingNoteDay(today) && !t.extra.readingNote) return false;
+  const essayDay = getEssayDay(today);
+  if (essayDay === 0 && !(t.extra.essay.day >= 0 && t.extra.essay.topic)) return false;
+  if (essayDay === 1 && !(t.extra.essay.day >= 1 && t.extra.essay.draft)) return false;
+
+  return true;
+}
+
+function checkAndReward() {
+  // 全勤额外奖励（不再是唯一奖励来源）
+  const today = getTodayStr();
+  if (data.rewardedDates.includes(today)) return;
+  if (!isAllDone()) return;
+
+  data.rewardedDates.push(today);
+  // 全勤额外随机奖励
+  const rand = Math.random();
+  if (rand < 0.45) {
+    data.inventory.eggs++;
+    showToast('🎉 全勤达成！额外获得一颗宠物蛋 🥚');
+  } else if (rand < 0.9) {
+    data.inventory.food += 2;
+    showToast('🎉 全勤达成！额外获得两份宠物食品 🍖🍖');
+  } else {
+    data.inventory.eggs++;
+    data.inventory.food += 2;
+    showToast('🌟 太棒了！全勤大礼包：蛋+双倍食品！');
+  }
+  saveData();
+
+  if (data.sendKey) {
+    sendPush('🎉 高兴今日全勤！', `高兴完成了今天所有学习任务！累计成年宠物：${data.adultPetsTotal} 只`);
+  }
+}
+
+// ==================== 宠物系统 ====================
+let currentPetIndex = 0;
+
+function getStageName(stage) {
+  const map = { egg: '🥚 宠物蛋', baby: '🐣 幼崽', growing: '🌱 成长中', adult: '🎉 已成年' };
+  return map[stage] || '未知';
+}
+
+function updatePetStage(pet) {
+  const oldStage = pet.stage;
+  if (pet.growth >= GROWTH_MAX) {
+    if (pet.stage !== 'adult') {
+      pet.stage = 'adult';
+      data.adultPetsTotal++;
+      // 进化动画
+      setTimeout(() => triggerEvolve(pet.id), 200);
+      showToast(`🎊 ${pet.name} 成年啦！`);
+
+      if (data.sendKey) {
+        sendPush('🎊 宠物成年！', `高兴的宠物「${pet.name}」成年啦！累计成年：${data.adultPetsTotal} 只。${getRewardSummary()}`);
+      }
+    }
+  } else if (pet.growth >= 3) {
+    if (pet.stage !== 'growing') { pet.stage = 'growing'; setTimeout(() => triggerEvolve(pet.id), 200); }
+  } else if (pet.growth >= 1) {
+    if (pet.stage !== 'baby') { pet.stage = 'baby'; setTimeout(() => triggerEvolve(pet.id), 200); }
+  } else {
+    pet.stage = 'egg';
+  }
+}
+
+function hatchEgg() {
+  if (data.inventory.eggs <= 0) { showToast('没有宠物蛋可以孵化 😢'); return; }
+  const activePets = data.pets.filter(p => p.stage !== 'adult');
+  if (activePets.length >= MAX_PETS) { showToast(`最多同时养 ${MAX_PETS} 只宠物哦~等它们成年吧！`); return; }
+
+  data.inventory.eggs--;
+  const usedNames = data.pets.map(p => p.name);
+  const availNames = PET_NAMES.filter(n => !usedNames.includes(n));
+  const name = availNames.length > 0 ? availNames[Math.floor(Math.random() * availNames.length)] : '新朋友';
+  const type = PET_TYPES[Math.floor(Math.random() * PET_TYPES.length)];
+
+  const newPet = {
+    id: Date.now(),
+    name: name,
+    type: type,
+    stage: 'egg',
+    growth: 0
+  };
+  data.pets.push(newPet);
+  saveData();
+
+  // 切到新宠物
+  currentPetIndex = data.pets.length - 1;
+
+  showToast(`🥚 孵化成功！${name} 来了！`);
+  renderRewards();
+}
+
+function feedPet(petId) {
+  if (data.inventory.food <= 0) { showToast('没有宠物食品了，完成作业获取吧~'); return; }
+  const pet = data.pets.find(p => p.id === petId);
+  if (!pet) return;
+  if (pet.stage === 'adult') { showToast(`${pet.name} 已经成年啦，不用再喂了~`); return; }
+
+  data.inventory.food--;
+  pet.growth++;
+  updatePetStage(pet);
+  saveData();
+
+  // 触发进食动画
+  triggerEat(petId);
+  spawnHeartsFromCenter();
+  showToast(`🍖 喂了 ${pet.name} 一口！(${pet.growth}/${GROWTH_MAX})`);
+  renderRewards();
+}
+
+function petPet(petId) {
+  const pet = data.pets.find(p => p.id === petId);
+  if (!pet) return;
+  triggerPetting(petId);
+  spawnHeartsFromCenter();
+  showToast(`🤗 摸了摸 ${pet.name}，它很开心！`);
+}
+
+function triggerEat(petId) {
+  const el = document.querySelector(`.pet-stage-container[data-pet-id="${petId}"] .pet-svg-wrap`);
+  if (!el) return;
+  el.classList.remove('eating');
+  void el.offsetWidth;
+  el.classList.add('eating');
+}
+
+function triggerEvolve(petId) {
+  const el = document.querySelector(`.pet-stage-container[data-pet-id="${petId}"] .pet-svg-wrap`);
+  const ring = document.querySelector(`.pet-stage-container[data-pet-id="${petId}"] .evolve-ring`);
+  if (!el) return;
+  el.classList.remove('evolving');
+  void el.offsetWidth;
+  el.classList.add('evolving');
+  if (ring) { ring.classList.remove('active'); void ring.offsetWidth; ring.classList.add('active'); }
+  spawnEvolveParticles(petId);
+}
+
+function triggerPetting(petId) {
+  const el = document.querySelector(`.pet-stage-container[data-pet-id="${petId}"] .pet-svg-wrap`);
+  if (!el) return;
+  el.classList.remove('petting');
+  void el.offsetWidth;
+  el.classList.add('petting');
+}
+
+function spawnHeartsFromCenter() {
+  const showcase = document.querySelector('.pet-showcase');
+  if (!showcase) return;
+  const rect = showcase.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 3;
+  for (let i = 0; i < 3; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart-particle';
+    heart.textContent = ['❤️','💕','💖'][i];
+    heart.style.left = (cx + (Math.random() - 0.5) * 40) + 'px';
+    heart.style.top = cy + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 1600);
+  }
+}
+
+function spawnFloatingText(text) {
+  const showcase = document.querySelector('.pet-showcase');
+  if (!showcase) return;
+  const rect = showcase.getBoundingClientRect();
+  const el = document.createElement('div');
+  el.textContent = text;
+  el.style.cssText = `
+    position:fixed; left:${rect.left + rect.width/2 - 30}px; top:${rect.top + 20}px;
+    font-size:1.2rem; font-weight:800; color:#ff8c00;
+    pointer-events:none; z-index:150;
+    animation: floatUp 1.8s forwards;
+  `;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 1900);
+}
+
+function spawnEvolveParticles(petId) {
+  const container = document.querySelector(`.pet-stage-container[data-pet-id="${petId}"]`);
+  if (!container) return;
+  const rect = container.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const emojis = ['✨','⭐','🌟','💫','🎉'];
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('div');
+    p.className = 'evolve-particle';
+    p.textContent = emojis[i % emojis.length];
+    p.style.cssText = `
+      left:${cx}px; top:${cy}px;
+      --px:${(Math.random()-0.5)*180}px;
+      --py:${(Math.random()-0.5)*180}px;
+    `;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 1100);
+  }
+}
+
+// 获取连续全勤天数（从今天往前数）
+function getStreakDays() {
+  const today = getTodayStr();
+  const todayDate = new Date(today + 'T00:00:00');
+  let streak = 0;
+  for (let i = 0; i < 365; i++) {
+    const d = new Date(todayDate);
+    d.setDate(d.getDate() - i);
+    const ds = d.toISOString().slice(0, 10);
+    if (getDayStatus(ds) === 'full') {
+      streak++;
+    } else {
+      break;
+    }
+  }
+  return streak;
+}
+
+// 检查是否连续7天全勤
+function checkWeekFullDone() {
+  return getStreakDays() >= 7;
+}
+
+function getRewardSummary() {
+  const count = data.adultPetsTotal;
+  const unlocked = [];
+  if (count >= 1) unlocked.push('🍦冰激凌/饮料');
+  if (count >= 2) unlocked.push('📺看电视');
+  if (count >= 20 && getStreakDays() >= 7) unlocked.push('🧸买小玩具');
+  if (count >= 30 && getStreakDays() >= 14) unlocked.push('🎢去游乐园');
+  return unlocked.length > 0 ? '已解锁：' + unlocked.join('、') : '暂无解锁奖励';
+}
+
+// ==================== 推送 ====================
+async function sendPush(title, content) {
+  if (!data.sendKey) return;
+  try {
+    await fetch(`https://sctapi.ftqq.com/${data.sendKey}.send`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: title, desp: content })
+    });
+  } catch(e) { /* 静默失败 */ }
+}
+
+function saveSettings() {
+  data.sendKey = document.getElementById('sendkey-input').value.trim();
+  data.reminderTime = document.getElementById('reminder-time').value;
+  saveData();
+  showToast('✅ 设置已保存');
+  updateReminderStatus();
+}
+
+async function testPush() {
+  const key = document.getElementById('sendkey-input').value.trim();
+  if (!key) { showToast('请先输入 SendKey'); return; }
+  try {
+    const resp = await fetch(`https://sctapi.ftqq.com/${key}.send`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: '🧪 毛茸茸守护计划 — 测试推送', desp: '如果你收到这条消息，说明推送配置成功！高兴的学习工作台已就绪。' })
+    });
+    const result = await resp.json();
+    if (result.code === 0) {
+      showToast('✅ 推送测试成功！请查看微信');
+    } else {
+      showToast('❌ 推送失败：' + (result.message || '未知错误'));
+    }
+  } catch(e) {
+    showToast('❌ 推送失败：网络错误');
+  }
+}
+
+function checkReminder() {
+  if (!data.sendKey || !data.reminderTime) return;
+  const now = new Date();
+  const [h, m] = data.reminderTime.split(':').map(Number);
+  if (now.getHours() === h && now.getMinutes() === m) {
+    const today = getTodayStr();
+    const done = isAllDone();
+    if (!done) {
+      // 检查今天是否已经发过提醒
+      const lastReminder = localStorage.getItem('maorongrong_last_reminder');
+      const todayKey = today + '_reminded';
+      if (lastReminder !== todayKey) {
+        localStorage.setItem('maorongrong_last_reminder', todayKey);
+        sendPush('⏰ 学习提醒', `高兴还有任务没完成哦，快去「毛茸茸守护计划」看看吧！`);
+      }
+    }
+  }
+}
+
+function updateReminderStatus() {
+  const el = document.getElementById('reminder-status');
+  if (!data.sendKey) {
+    el.textContent = '⚠️ 未配置推送';
+    el.style.color = 'var(--warn)';
+  } else {
+    el.textContent = `✅ 已配置，每日 ${data.reminderTime} 检查`;
+    el.style.color = 'var(--primary-dark)';
+  }
+}
+
+// ==================== Toast ====================
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(el._timeout);
+  el._timeout = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// ==================== 第一栏渲染 ====================
+function renderTasks() {
+  const t = getTodayTasks();
+  const today = getTodayStr();
+  const essayDay = getEssayDay(today);
+  const readingNoteDay = isReadingNoteDay(today);
+
+  let html = '';
+
+  // 每日任务
+  html += '<div class="task-group"><div class="task-group-header"><span class="time-icon">☀️</span> 上午任务</div>';
+  html += taskItem('morning.summer', '暑期作业 5-6页', t.morning.summer);
+  html += taskItem('morning.math', '数学作业 1课', t.morning.math);
+  html += taskItem('morning.english', '英语单词 1单元', t.morning.english);
+  html += taskItem('morning.chinese', '语文生字 1课', t.morning.chinese);
+  html += '</div>';
+
+  html += '<div class="task-group"><div class="task-group-header"><span class="time-icon">🌤️</span> 下午任务</div>';
+  html += taskItem('afternoon.summer', '暑期作业 5-6页', t.afternoon.summer);
+  html += taskItem('afternoon.math', '数学作业 1课', t.afternoon.math);
+  html += taskItem('afternoon.english', '英语课文 1单元', t.afternoon.english);
+  html += taskItem('afternoon.chinese', '语文生字 1课', t.afternoon.chinese);
+  html += '</div>';
+
+  html += '<div class="task-group"><div class="task-group-header"><span class="time-icon">🌙</span> 全天任务</div>';
+  html += taskItem('daily.reading', '课外阅读 40分钟', t.daily.reading);
+  html += taskItem('daily.listening', '英语磨耳朵 15分钟', t.daily.listening);
+  html += taskItem('daily.morningRead', '语文英语晨读 20分钟', t.daily.morningRead);
+  html += '</div>';
+
+  // 周期任务
+  html += '<div class="task-group"><div class="task-group-header"><span class="time-icon">📋</span> 周期任务</div>';
+
+  // 阅读笔记
+  if (readingNoteDay) {
+    html += '<div class="period-task">';
+    html += '<div class="pt-header"><span class="pt-title">📝 课外阅读笔记</span>';
+    html += '<span class="pt-badge">每2天</span></div>';
+    html += '<div class="pt-desc">今天需要完成一篇课外阅读笔记哦~</div>';
+    html += `<button class="pt-btn ${t.extra.readingNote ? 'done-btn' : ''}" onclick="toggleReadingNote()">${t.extra.readingNote ? '✅ 已完成' : '📝 去完成'}</button>`;
+    html += '</div>';
+  } else {
+    html += '<div class="period-task" style="opacity:0.5;">';
+    html += '<div class="pt-header"><span class="pt-title">📝 课外阅读笔记</span><span class="pt-badge">每2天</span></div>';
+    html += '<div class="pt-desc">今天不需要写阅读笔记，好好享受阅读吧~</div>';
+    html += '</div>';
+  }
+
+  // 作文
+  if (essayDay === 0) {
+    html += '<div class="period-task">';
+    html += '<div class="pt-header"><span class="pt-title">✏️ 作文 Day1 — 定方向 + 搭骨架</span>';
+    html += '<span class="pt-badge">每3天</span></div>';
+    html += '<div class="pt-desc">15-20分钟：定主题 → 列提纲 → 找好词好句</div>';
+    html += `<button class="pt-btn ${t.extra.essay.day >= 0 && t.extra.essay.topic ? 'done-btn' : ''}" onclick="openEssayModal(0)">${t.extra.essay.day >= 0 && t.extra.essay.topic ? '✅ 已完成骨架' : '✏️ 开始搭骨架'}</button>`;
+    html += '</div>';
+  } else if (essayDay === 1) {
+    html += '<div class="period-task">';
+    html += '<div class="pt-header"><span class="pt-title">✏️ 作文 Day2 — 填内容 + 写初稿</span>';
+    html += '<span class="pt-badge">每3天</span></div>';
+    html += '<div class="pt-desc">25-30分钟：照着提纲写完整初稿，写完就是胜利！</div>';
+    const draftDone = t.extra.essay.day >= 1 && t.extra.essay.draft;
+    html += `<button class="pt-btn ${draftDone ? 'done-btn' : ''}" onclick="openEssayModal(1)">${draftDone ? '✅ 初稿已完成' : '✏️ 写初稿'}</button>`;
+    html += '</div>';
+  } else {
+    html += '<div class="period-task" style="opacity:0.5;">';
+    html += '<div class="pt-header"><span class="pt-title">✏️ 作文 Day3 — 自由日</span><span class="pt-badge">每3天</span></div>';
+    html += '<div class="pt-desc">今天没有作文任务，放松一下吧~</div>';
+    html += '</div>';
+  }
+
+  html += '</div>';
+
+  document.getElementById('tasks-content').innerHTML = html;
+}
+
+function taskItem(key, label, checked) {
+  const cls = checked ? 'task-item done' : 'task-item';
+  const cbCls = checked ? 'checkbox checked' : 'checkbox';
+  return `<div class="${cls}" onclick="toggleTask('${key}')">
+    <div class="${cbCls}"></div>
+    <span class="task-label">${label}</span>
+  </div>`;
+}
+
+function toggleTask(key) {
+  const t = getTodayTasks();
+  const parts = key.split('.');
+  let obj = t;
+  for (let i = 0; i < parts.length - 1; i++) obj = obj[parts[i]];
+  const current = obj[parts[parts.length - 1]];
+  obj[parts[parts.length - 1]] = !current;
+  saveData();
+
+  // 勾选时给奖励（取消勾选不给）
+  if (!current) {
+    giveTaskReward(key);
+  }
+
+  renderTasks();
+  renderCalendar();
+  checkAndReward();
+}
+
+function toggleReadingNote() {
+  const t = getTodayTasks();
+  const wasDone = t.extra.readingNote;
+  t.extra.readingNote = !t.extra.readingNote;
+  saveData();
+
+  if (!wasDone) {
+    giveTaskReward('extra.readingNote');
+  }
+
+  renderTasks();
+  renderCalendar();
+  checkAndReward();
+}
+
+// ==================== 作文弹窗 ====================
+function openEssayModal(day) {
+  const t = getTodayTasks();
+  const modal = document.getElementById('essay-modal');
+  const content = document.getElementById('essay-modal-content');
+
+  if (day === 0) {
+    // Day1: 搭骨架
+    content.innerHTML = `
+      <h3>✏️ 作文 Day1 — 定方向 + 搭骨架</h3>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:14px;">目标：15-20分钟把框架搭好，知道写什么、怎么写！</p>
+      <div class="step">
+        <div class="step-label">📌 步骤1：定主题（1分钟）</div>
+        <input type="text" id="essay-topic" placeholder="我要写什么？例如：我的妈妈、一次难忘的旅行..." value="${escapeHtml(t.extra.essay.topic || '')}">
+      </div>
+      <div class="step">
+        <div class="step-label">📝 步骤2：列提纲（10分钟）</div>
+        <div style="margin-bottom:8px;">
+          <div style="font-size:0.8rem;color:var(--primary-dark);margin-bottom:4px;">开头 — 1句话说清楚「我要写什么」</div>
+          <textarea id="essay-opening" placeholder="例如：今天我要写我的妈妈，她是个特别爱做饭的人。">${escapeHtml(t.extra.essay.skeleton?.opening || '')}</textarea>
+        </div>
+        <div style="margin-bottom:8px;">
+          <div style="font-size:0.8rem;color:var(--primary-dark);margin-bottom:4px;">中间 — 2-3个核心细节，「具体发生了什么」</div>
+          <textarea id="essay-middle" placeholder="例如：①妈妈早上6点就起来给我做早餐 ②她做的番茄炒蛋酸甜可口 ③我生病时她给我煮热汤">${escapeHtml(t.extra.essay.skeleton?.middle || '')}</textarea>
+        </div>
+        <div>
+          <div style="font-size:0.8rem;color:var(--primary-dark);margin-bottom:4px;">结尾 — 1句话说清楚「我的感受/想法」</div>
+          <textarea id="essay-ending" placeholder="例如：我觉得我的妈妈是全世界最好的妈妈。">${escapeHtml(t.extra.essay.skeleton?.ending || '')}</textarea>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">🌟 步骤3：找好词好句（5分钟）</div>
+        <textarea id="essay-words" placeholder="找2-3个适合这篇作文的好词好句...">${escapeHtml(t.extra.essay.goodWords || '')}</textarea>
+      </div>
+      <div class="btn-row">
+        <button class="btn-cancel" onclick="closeEssayModal()">取消</button>
+        <button class="btn-save" onclick="saveEssaySkeleton()">💾 保存骨架</button>
+      </div>
+    `;
+  } else if (day === 1) {
+    // Day2: 写初稿
+    const skeleton = t.extra.essay.skeleton || {};
+    content.innerHTML = `
+      <h3>✏️ 作文 Day2 — 填内容 + 写初稿</h3>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:14px;">目标：25-30分钟，照着提纲写完整初稿，写完就是胜利！</p>
+      <div class="ref-skeleton">
+        <strong>📋 你的提纲：</strong><br>
+        <strong>主题：</strong>${escapeHtml(t.extra.essay.topic || '（未填写）')}<br>
+        <strong>开头：</strong>${escapeHtml(skeleton.opening || '（未填写）')}<br>
+        <strong>中间：</strong>${escapeHtml(skeleton.middle || '（未填写）')}<br>
+        <strong>结尾：</strong>${escapeHtml(skeleton.ending || '（未填写）')}<br>
+        ${t.extra.essay.goodWords ? '<strong>好词好句：</strong>' + escapeHtml(t.extra.essay.goodWords) : ''}
+      </div>
+      <div class="step">
+        <div class="step-label">✍️ 开始写初稿吧！</div>
+        <textarea id="essay-draft" style="min-height:200px;" placeholder="照着上面的提纲，把关键词变成完整句子，加入好词好句...">${escapeHtml(t.extra.essay.draft || '')}</textarea>
+      </div>
+      <div class="read-aloud-hint">📢 写完后请大声读一遍，检查有没有不通顺的句子或错别字哦！</div>
+      <div class="btn-row">
+        <button class="btn-cancel" onclick="closeEssayModal()">取消</button>
+        <button class="btn-save" onclick="saveEssayDraft()">💾 保存初稿</button>
+      </div>
+    `;
+  }
+
+  modal.classList.add('show');
+}
+
+function closeEssayModal() {
+  document.getElementById('essay-modal').classList.remove('show');
+}
+
+function saveEssaySkeleton() {
+  const t = getTodayTasks();
+  const wasDone = t.extra.essay.day >= 0 && t.extra.essay.topic;
+  t.extra.essay.day = 0;
+  t.extra.essay.topic = document.getElementById('essay-topic').value.trim();
+  t.extra.essay.skeleton = {
+    opening: document.getElementById('essay-opening').value.trim(),
+    middle: document.getElementById('essay-middle').value.trim(),
+    ending: document.getElementById('essay-ending').value.trim()
+  };
+  t.extra.essay.goodWords = document.getElementById('essay-words').value.trim();
+  saveData();
+  closeEssayModal();
+  showToast('✅ 作文骨架已保存！明天来写初稿吧~');
+
+  if (!wasDone && t.extra.essay.topic) {
+    giveTaskReward('extra.essay.skeleton');
+  }
+
+  renderTasks();
+  renderCalendar();
+  checkAndReward();
+}
+
+function saveEssayDraft() {
+  const t = getTodayTasks();
+  const wasDone = t.extra.essay.day >= 1 && t.extra.essay.draft;
+  t.extra.essay.day = 1;
+  t.extra.essay.draft = document.getElementById('essay-draft').value.trim();
+  saveData();
+  closeEssayModal();
+  showToast('✅ 作文初稿已保存！写得真棒！');
+
+  if (!wasDone && t.extra.essay.draft) {
+    giveTaskReward('extra.essay.draft');
+  }
+
+  renderTasks();
+  renderCalendar();
+  checkAndReward();
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ==================== 第二栏渲染 ====================
+function renderRewards() {
+  let html = '';
+
+  // 库存
+  html += '<div class="pet-area">';
+  html += '<div class="inventory-bar">';
+  html += `<div class="inv-item">🥚 宠物蛋 <span class="count">${data.inventory.eggs}</span></div>`;
+  html += `<div class="inv-item">🍖 宠物食品 <span class="count">${data.inventory.food}</span></div>`;
+  html += '</div>';
+
+  // 宠物展示区 — 单只滑动
+  html += '<div class="pet-showcase" id="pet-showcase">';
+
+  if (data.pets.length === 0) {
+    html += `<div class="pet-main-card empty-card" style="position:relative;opacity:1;">
+      <div style="font-size:3rem;margin-bottom:8px;">🥚</div>
+      <div style="font-weight:700;color:var(--text-light);">还没有宠物</div>
+      <div style="font-size:0.78rem;color:var(--text-light);margin-top:4px;">孵化一颗蛋开始吧~</div>
+    </div>`;
+  } else {
+    // 确保 index 有效
+    if (currentPetIndex >= data.pets.length) currentPetIndex = data.pets.length - 1;
+    if (currentPetIndex < 0) currentPetIndex = 0;
+
+    for (let i = 0; i < data.pets.length; i++) {
+      const pet = data.pets[i];
+      const growthPercent = Math.min(100, (pet.growth / GROWTH_MAX) * 100);
+      const animClass = pet.stage === 'egg' ? 'egg-anim' : (pet.stage === 'baby' ? 'baby-anim' : (pet.stage === 'growing' ? 'growing-anim' : 'adult-anim'));
+      const posClass = i === currentPetIndex ? 'active' : (i < currentPetIndex ? 'left' : 'right');
+
+      html += `<div class="pet-stage-container ${posClass}" data-pet-id="${pet.id}" style="pointer-events:${posClass==='active'?'auto':'none'}">
+        <div class="pet-main-card" onclick="petPet(${pet.id})">
+          <div class="evolve-ring"></div>
+          <div class="pet-svg-wrap ${animClass}">${getPetSVG(pet.type || 'cat', pet.stage)}</div>
+          <div class="pet-name-large">${pet.name}</div>
+          <div class="pet-stage-label">${getStageName(pet.stage)}</div>
+          <div class="pet-growth-bar"><div class="pet-growth-fill" style="width:${growthPercent}%"></div></div>
+          <div class="pet-growth-text">${pet.growth}/${GROWTH_MAX} 成长值</div>
+        </div>
+      </div>`;
+    }
+  }
+  html += '</div>';
+
+  // 导航和按钮
+  if (data.pets.length > 0) {
+    html += '<div class="pet-nav">';
+    html += `<button class="pet-nav-arrow" onclick="navigatePet(-1)" ${currentPetIndex <= 0 ? 'disabled' : ''}>◀</button>`;
+    html += '<div class="pet-nav-dots">';
+    for (let i = 0; i < data.pets.length; i++) {
+      html += `<div class="pet-nav-dot ${i === currentPetIndex ? 'active' : ''}" onclick="navigatePetTo(${i})"></div>`;
+    }
+    html += '</div>';
+    html += `<button class="pet-nav-arrow" onclick="navigatePet(1)" ${currentPetIndex >= data.pets.length - 1 ? 'disabled' : ''}>▶</button>`;
+    html += `<span class="pet-nav-count">${currentPetIndex + 1}/${data.pets.length}</span>`;
+    html += '</div>';
+
+    // 交互按钮
+    const curPet = data.pets[currentPetIndex];
+    const canFeed = data.inventory.food > 0 && curPet && curPet.stage !== 'adult';
+    html += '<div class="pet-actions">';
+    html += `<button class="pet-action-btn btn-feed" ${canFeed ? '' : 'disabled'} onclick="feedPet(${curPet.id})">🍖 喂养</button>`;
+    html += `<button class="pet-action-btn btn-pet" onclick="petPet(${curPet.id})">🤗 摸摸头</button>`;
+    html += '</div>';
+  }
+
+  // 孵化按钮
+  const activePets = data.pets.filter(p => p.stage !== 'adult');
+  const canHatch = data.inventory.eggs > 0 && activePets.length < MAX_PETS;
+  html += `<button class="btn-hatch" ${canHatch ? '' : 'disabled'} onclick="hatchEgg()">🥚 孵化宠物蛋 ${canHatch ? '' : '(库存不足/已满)'}</button>`;
+  html += '</div>';
+
+  // 现实奖励
+  html += '<div class="rewards-list">';
+  html += '<div style="font-weight:700;font-size:0.9rem;margin-bottom:8px;">🏆 现实奖励</div>';
+
+  const rewards = [
+    { cond: 1, name: '吃冰激凌 / 喝饮料', emoji: '🍦', key: 'icecream', type: 'pets' },
+    { cond: 2, name: '看电视一集', emoji: '📺', key: 'tv', type: 'pets' },
+    { cond: 3, name: '买小玩具', emoji: '🧸', key: 'toy', type: 'both', petsNeed: 20, daysNeed: 7 },
+    { cond: 5, name: '去游乐园玩', emoji: '🎢', key: 'amusement', type: 'both', petsNeed: 30, daysNeed: 14 }
+  ];
+
+  for (const r of rewards) {
+    let unlocked;
+    if (r.type === 'both') {
+      unlocked = data.adultPetsTotal >= r.petsNeed && getStreakDays() >= r.daysNeed;
+    } else {
+      unlocked = data.adultPetsTotal >= r.cond;
+    }
+
+    let condText;
+    if (r.type === 'both') {
+      condText = `${r.petsNeed}只宠物成年 + 连续${r.daysNeed}天全勤`;
+      condText += unlocked ? ' ✅' : `（成年${data.adultPetsTotal}/${r.petsNeed} | 连续${getStreakDays()}/${r.daysNeed}天）`;
+    } else {
+      condText = `需要 ${r.cond} 只宠物成年 ${unlocked ? '✅' : `（当前 ${data.adultPetsTotal} 只）`}`;
+    }
+    html += `<div class="reward-item ${unlocked ? 'unlocked' : 'locked'}">
+      <span class="reward-emoji">${r.emoji}</span>
+      <div class="reward-info">
+        <div class="reward-name">${r.name}</div>
+        <div class="reward-cond">${condText}</div>
+      </div>
+      <span class="reward-badge ${unlocked ? 'unlocked' : 'locked'}">${unlocked ? '已解锁' : '未解锁'}</span>
+    </div>`;
+  }
+  html += '</div>';
+
+  document.getElementById('rewards-content').innerHTML = html;
+}
+
+function navigatePet(dir) {
+  const newIdx = currentPetIndex + dir;
+  if (newIdx < 0 || newIdx >= data.pets.length) return;
+  currentPetIndex = newIdx;
+  renderRewards();
+}
+
+function navigatePetTo(idx) {
+  if (idx < 0 || idx >= data.pets.length) return;
+  currentPetIndex = idx;
+  renderRewards();
+}
+
+// ==================== 第三栏渲染 ====================
+let calYear, calMonth;
+
+function renderCalendar(year, month) {
+  if (year === undefined) {
+    const now = new Date();
+    year = now.getFullYear();
+    month = now.getMonth();
+  }
+  calYear = year;
+  calMonth = month;
+
+  const today = getTodayStr();
+  const monthLabel = `${year}年 ${month + 1}月`;
+  const firstDay = new Date(year, month, 1).getDay(); // 0=Sun
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  let html = '';
+  html += '<div class="cal-nav">';
+  html += `<button onclick="renderCalendar(${year}, ${month - 1})">◀</button>`;
+  html += `<span class="month-label">${monthLabel}</span>`;
+  html += `<button onclick="renderCalendar(${year}, ${month + 1})">▶</button>`;
+  html += '</div>';
+
+  const dayHeaders = ['日','一','二','三','四','五','六'];
+  html += '<div class="cal-grid">';
+  for (const h of dayHeaders) {
+    html += `<div class="cal-day-header">${h}</div>`;
+  }
+
+  // 填充空白
+  for (let i = 0; i < firstDay; i++) {
+    html += '<div class="cal-day other-month"></div>';
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday = dateStr === today;
+    const status = getDayStatus(dateStr);
+    let cls = 'cal-day';
+    if (isToday) cls += ' today';
+    if (status === 'full') cls += ' full';
+    else if (status === 'partial') cls += ' partial';
+    else if (status === 'miss' && dateStr <= today) cls += ' miss';
+    else if (dateStr > today) cls += ' other-month';
+
+    html += `<div class="${cls}" onclick="openDayDetail('${dateStr}')" title="${dateStr}">
+      ${d}
+      ${status !== 'none' ? `<div class="day-dot"></div>` : ''}
+    </div>`;
+  }
+
+  html += '</div>';
+
+  // 统计
+  html += '<div class="cal-stats">';
+  const stats = getMonthStats(year, month);
+  html += `<span class="stat-chip full">✅ 全勤 ${stats.full}天</span>`;
+  html += `<span class="stat-chip partial">⚠️ 部分 ${stats.partial}天</span>`;
+  html += `<span class="stat-chip miss">❌ 漏打卡 ${stats.miss}天</span>`;
+  html += `<span class="stat-chip streak">🔥 连续 ${stats.streak}天</span>`;
+  html += '</div>';
+
+  // 漏打卡列表
+  if (stats.missDates.length > 0) {
+    html += '<div class="miss-list">';
+    html += '<div style="font-weight:700;font-size:0.85rem;margin-bottom:6px;">📌 漏打卡记录</div>';
+    for (const md of stats.missDates.slice(0, 5)) {
+      const note = data.calendarNotes[md] || '';
+      html += `<div class="miss-item">
+        <span>📅 ${md.slice(5)}</span>
+        <span class="miss-note">${note || '点击添加备注'}</span>
+        <input class="miss-note-input" placeholder="备注..." value="${escapeHtml(note)}" onchange="saveMissNote('${md}', this.value)" onclick="event.stopPropagation()">
+      </div>`;
+    }
+    if (stats.missDates.length > 5) {
+      html += `<div style="font-size:0.75rem;color:var(--text-light);text-align:center;">还有 ${stats.missDates.length - 5} 天...</div>`;
+    }
+    html += '</div>';
+  }
+
+  document.getElementById('calendar-content').innerHTML = html;
+}
+
+function getDayStatus(dateStr) {
+  const t = data.tasks[dateStr];
+  if (!t) return 'none';
+  const allChecks = [
+    t.morning?.summer, t.morning?.math, t.morning?.english, t.morning?.chinese,
+    t.afternoon?.summer, t.afternoon?.math,
+    t.daily?.reading, t.daily?.listening, t.daily?.morningRead
+  ].filter(v => v !== undefined);
+  if (allChecks.length === 0) return 'none';
+
+  const doneCount = allChecks.filter(v => v).length;
+  if (doneCount === allChecks.length) return 'full';
+  if (doneCount > 0) return 'partial';
+  return 'miss';
+}
+
+function getMonthStats(year, month) {
+  const today = getTodayStr();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  let full = 0, partial = 0, miss = 0;
+  const missDates = [];
+  let streak = 0;
+  let currentStreak = 0;
+
+  // 从今天往前算连续天数
+  const todayDate = new Date(today + 'T00:00:00');
+  for (let i = 0; i < 365; i++) {
+    const d = new Date(todayDate);
+    d.setDate(d.getDate() - i);
+    const ds = d.toISOString().slice(0, 10);
+    const status = getDayStatus(ds);
+    if (status === 'full') {
+      currentStreak++;
+    } else {
+      break;
+    }
+  }
+  streak = currentStreak;
+
+  // 当月统计
+  for (let d = 1; d <= daysInMonth; d++) {
+    const ds = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if (ds > today) continue;
+    const status = getDayStatus(ds);
+    if (status === 'full') full++;
+    else if (status === 'partial') partial++;
+    else if (status === 'miss') { miss++; missDates.push(ds); }
+  }
+
+  return { full, partial, miss, missDates, streak };
+}
+
+function openDayDetail(dateStr) {
+  const t = data.tasks[dateStr];
+  const note = data.calendarNotes[dateStr] || '';
+  if (!t) { showToast('这天还没有数据哦~'); return; }
+
+  const status = getDayStatus(dateStr);
+  const statusText = status === 'full' ? '✅ 全勤' : (status === 'partial' ? '⚠️ 部分完成' : '❌ 漏打卡');
+
+  const modal = document.getElementById('essay-modal');
+  const content = document.getElementById('essay-modal-content');
+  content.innerHTML = `
+    <h3>📅 ${dateStr} — ${statusText}</h3>
+    <div style="font-size:0.85rem;line-height:1.8;margin:12px 0;">
+      <strong>上午：</strong>
+      ${t.morning?.summer ? '✅' : '❌'} 暑期作业 &nbsp;
+      ${t.morning?.math ? '✅' : '❌'} 数学 &nbsp;
+      ${t.morning?.english ? '✅' : '❌'} 英语 &nbsp;
+      ${t.morning?.chinese ? '✅' : '❌'} 语文<br>
+      <strong>下午：</strong>
+      ${t.afternoon?.summer ? '✅' : '❌'} 暑期作业 &nbsp;
+      ${t.afternoon?.math ? '✅' : '❌'} 数学 &nbsp;
+      ${t.afternoon?.english ? '✅' : '❌'} 英语 &nbsp;
+      ${t.afternoon?.chinese ? '✅' : '❌'} 语文<br>
+      <strong>全天：</strong>
+      ${t.daily?.reading ? '✅' : '❌'} 阅读 &nbsp;
+      ${t.daily?.listening ? '✅' : '❌'} 磨耳朵 &nbsp;
+      ${t.daily?.morningRead ? '✅' : '❌'} 晨读
+    </div>
+    <div style="margin:12px 0;">
+      <label style="font-weight:700;font-size:0.85rem;">📝 备注：</label>
+      <textarea id="day-note-input" style="width:100%;min-height:60px;margin-top:4px;" placeholder="写写这天为什么漏打卡...">${escapeHtml(note)}</textarea>
+    </div>
+    <div class="btn-row">
+      <button class="btn-cancel" onclick="closeEssayModal()">关闭</button>
+      <button class="btn-save" onclick="saveDayNote('${dateStr}')">💾 保存备注</button>
+    </div>
+  `;
+  modal.classList.add('show');
+}
+
+function saveDayNote(dateStr) {
+  const note = document.getElementById('day-note-input').value.trim();
+  if (note) {
+    data.calendarNotes[dateStr] = note;
+  } else {
+    delete data.calendarNotes[dateStr];
+  }
+  saveData();
+  closeEssayModal();
+  renderCalendar(calYear, calMonth);
+  showToast('✅ 备注已保存');
+}
+
+function saveMissNote(dateStr, value) {
+  if (value.trim()) {
+    data.calendarNotes[dateStr] = value.trim();
+  } else {
+    delete data.calendarNotes[dateStr];
+  }
+  saveData();
+}
+
+// ==================== 家长报告 ====================
+function generateReport() {
+  const today = getTodayStr();
+  const t = data.tasks[today];
+  const status = isAllDone() ? '✅ 全勤达成！' : '⚠️ 还有任务未完成';
+  const doneList = [];
+  if (t) {
+    if (t.morning.summer) doneList.push('上午暑期作业');
+    if (t.morning.math) doneList.push('上午数学');
+    if (t.morning.english) doneList.push('英语单词');
+    if (t.morning.chinese) doneList.push('语文生字');
+    if (t.afternoon.summer) doneList.push('下午暑期作业');
+    if (t.afternoon.math) doneList.push('下午数学');
+    if (t.afternoon.english) doneList.push('下午英语课文');
+    if (t.afternoon.chinese) doneList.push('下午语文生字');
+    if (t.daily.reading) doneList.push('课外阅读');
+    if (t.daily.listening) doneList.push('英语磨耳朵');
+    if (t.daily.morningRead) doneList.push('晨读');
+  }
+
+  const report = `📋 高兴今日报告 (${today})\n\n` +
+    `状态：${status}\n` +
+    `已完成：${doneList.length > 0 ? doneList.join('、') : '无'}\n` +
+    `累计成年宠物：${data.adultPetsTotal} 只\n` +
+    `宠物蛋库存：${data.inventory.eggs} | 食品库存：${data.inventory.food}\n` +
+    `\n—— 毛茸茸守护计划`;
+
+  if (data.sendKey) {
+    sendPush('📋 高兴今日学习报告', report);
+    showToast('📤 报告已推送到微信');
+  } else {
+    showToast(report);
+  }
+}
+
+function generateWeekReport() {
+  const today = getTodayStr();
+  const todayDate = new Date(today + 'T00:00:00');
+  let fullDays = 0, partialDays = 0, missDays = 0;
+  const details = [];
+
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(todayDate);
+    d.setDate(d.getDate() - i);
+    const ds = d.toISOString().slice(0, 10);
+    const status = getDayStatus(ds);
+    if (status === 'full') fullDays++;
+    else if (status === 'partial') partialDays++;
+    else if (status === 'miss') missDays++;
+    const emoji = status === 'full' ? '✅' : (status === 'partial' ? '⚠️' : '❌');
+    details.push(`${emoji} ${ds.slice(5)}`);
+  }
+
+  const report = `📊 高兴本周报告 (近7天)\n\n` +
+    `全勤：${fullDays}天 | 部分：${partialDays}天 | 漏打卡：${missDays}天\n` +
+    details.join('\n') + '\n' +
+    `\n累计成年宠物：${data.adultPetsTotal} 只\n` +
+    `\n—— 毛茸茸守护计划`;
+
+  if (data.sendKey) {
+    sendPush('📊 高兴本周学习报告', report);
+    showToast('📤 本周报告已推送到微信');
+  } else {
+    showToast(report);
+  }
+}
+
+// ==================== 初始化 ====================
+function init() {
+  loadData();
+
+  // 初始化宠物索引
+  currentPetIndex = data.pets.length > 0 ? 0 : -1;
+
+  // 恢复设置
+  document.getElementById('sendkey-input').value = data.sendKey || '';
+  document.getElementById('reminder-time').value = data.reminderTime || '20:00';
+
+  renderTasks();
+  renderRewards();
+  renderCalendar();
+  updateReminderStatus();
+
+  // 定时检查提醒
+  setInterval(checkReminder, 60000);
+  // 初次检查
+  checkReminder();
+
+  // 点击弹窗遮罩关闭
+  document.getElementById('essay-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeEssayModal();
+  });
+
+  console.log('🌿 高兴的毛茸茸守护计划 — 已就绪！');
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
