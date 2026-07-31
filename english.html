@@ -109,6 +109,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 </div>
 
 <div class="content-card">
+<div id="stats-display" style="font-size:0.82rem;color:var(--text-light);margin-bottom:12px;padding:8px 14px;background:#f5faf7;border-radius:10px;text-align:center;"></div>
 <div class="level-tabs" id="level-tabs"></div>
 <div id="topic-content"></div>
 </div>
@@ -286,6 +287,69 @@ const TOPICS = [
   }
 ];
 
+// ==================== 日更新机制 ====================
+// 每天自动推荐一篇，按天数循环；历史完成记录保留
+const START_DATE = '2026-07-01';
+
+function daysFromStart() {
+  const start = new Date(START_DATE + 'T00:00:00');
+  const now = new Date();
+  now.setHours(0,0,0,0);
+  return Math.max(0, Math.floor((now - start) / (1000 * 60 * 60 * 24)));
+}
+
+// 今日推荐的篇目索引（在 TOPICS 中的位置），按天数循环
+function getTodayRecommendedIdx() {
+  return daysFromStart() % TOPICS.length;
+}
+
+// 获取今日推荐级别
+function getTodayRecommendedLevel() {
+  return TOPICS[getTodayRecommendedIdx()].level;
+}
+
+// 获取历史完成记录（保留所有历史数据）
+function getHistory() {
+  return JSON.parse(localStorage.getItem('english_history') || '{}');
+}
+
+function saveHistory(history) {
+  localStorage.setItem('english_history', JSON.stringify(history));
+}
+
+// 记录今日完成
+function recordTodayDone() {
+  const today = new Date().toISOString().slice(0, 10);
+  const history = getHistory();
+  if (!history[today]) {
+    history[today] = { topicIdx: getTodayRecommendedIdx(), completed: true, timestamp: Date.now() };
+    saveHistory(history);
+  }
+  // 兼容旧数据
+  const done = JSON.parse(localStorage.getItem('english_done') || '[]');
+  if (!done.includes(today)) { done.push(today); localStorage.setItem('english_done', JSON.stringify(done)); }
+}
+
+// 获取累计完成天数
+function getTotalDoneDays() {
+  return Object.keys(getHistory()).length;
+}
+
+// 获取连续完成天数
+function getStreakDays() {
+  const history = getHistory();
+  let streak = 0;
+  const today = new Date();
+  for (let i = 0; i < 365; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const ds = d.toISOString().slice(0, 10);
+    if (history[ds] && history[ds].completed) streak++;
+    else break;
+  }
+  return streak;
+}
+
 // ==================== Timer ====================
 const TOTAL_SECONDS = 15 * 60;
 const CIRCUMFERENCE = 2 * Math.PI * 39;
@@ -332,9 +396,8 @@ function completeTimer() {
   document.getElementById('timer-status').textContent = '完成！';
   document.getElementById('complete-overlay').classList.add('show');
   synth.cancel();
-  const today = new Date().toISOString().slice(0,10);
-  const done = JSON.parse(localStorage.getItem('english_done') || '[]');
-  if (!done.includes(today)) { done.push(today); localStorage.setItem('english_done', JSON.stringify(done)); }
+  recordTodayDone();
+  updateStatsDisplay();
 }
 
 function closeComplete() { document.getElementById('complete-overlay').classList.remove('show'); }
@@ -408,12 +471,50 @@ function showToast(msg) {
   clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2000);
 }
 
+// ==================== 统计与今日推荐 ====================
+function updateStatsDisplay() {
+  const el = document.getElementById('stats-display');
+  if (!el) return;
+  const total = getTotalDoneDays();
+  const streak = getStreakDays();
+  const todayDone = new Date().toISOString().slice(0,10);
+  const history = getHistory();
+  const doneToday = !!(history[todayDone] && history[todayDone].completed);
+  el.innerHTML = `📊 累计 <strong style="color:#3d7a5c;">${total}</strong> 天 · 🔥 连续 <strong style="color:#3d7a5c;">${streak}</strong> 天 ${doneToday ? '· ✅ 今日已完成' : ''}`;
+}
+
 // ==================== Init ====================
 function init() {
-  renderLevelTabs(); renderTopics(); updateTimerDisplay();
+  // 自动定位到今日推荐级别和篇目
+  currentLevel = getTodayRecommendedLevel();
+  renderLevelTabs();
+  renderTopics();
+  updateTimerDisplay();
+  updateStatsDisplay();
+
+  // 高亮今日推荐篇目
+  const recIdx = getTodayRecommendedIdx();
+  const recTopic = TOPICS[recIdx];
   const today = new Date().toISOString().slice(0,10);
-  const done = JSON.parse(localStorage.getItem('english_done') || '[]');
-  if (done.includes(today)) document.getElementById('timer-status').textContent = '✅ 今天已完成磨耳朵';
+  const history = getHistory();
+  const doneToday = !!(history[today] && history[today].completed);
+  if (doneToday) {
+    document.getElementById('timer-status').textContent = '✅ 今天已完成磨耳朵，可复习其他篇目';
+  } else {
+    document.getElementById('timer-status').textContent = `📌 今日推荐：${recTopic.title}`;
+  }
+
+  // 滚动到推荐篇目
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.topic-card');
+    const filtered = TOPICS.filter(t => t.level === currentLevel);
+    const localIdx = filtered.indexOf(recTopic);
+    if (localIdx >= 0 && cards[localIdx]) {
+      cards[localIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      cards[localIdx].style.boxShadow = '0 0 0 3px #7ecba1';
+      setTimeout(() => { if (cards[localIdx]) cards[localIdx].style.boxShadow = ''; }, 3000);
+    }
+  }, 300);
 }
 document.addEventListener('DOMContentLoaded', init);
 </script>
