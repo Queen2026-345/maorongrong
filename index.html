@@ -462,6 +462,14 @@ body {
 .reward-badge.unlocked { background: #ffb347; color: #fff; }
 .reward-badge.locked { background: #e0e0e0; color: #999; }
 
+.reward-redeem-btn {
+  padding: 6px 16px; border: none; border-radius: 18px;
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  color: #fff; font-size: 0.82rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.reward-redeem-btn:hover { transform: scale(1.06); box-shadow: 0 2px 10px rgba(255,140,0,0.4); }
+
 /* ========== Calendar ========== */
 .cal-nav {
   display: flex; align-items: center; justify-content: center;
@@ -766,7 +774,8 @@ function defaultData() {
     adultPetsTotal: 0,
     calendarNotes: {},
     rewardedDates: [],
-    rewardedTasks: {}
+    rewardedTasks: {},
+    rewardHistory: []  // 兑换记录
   };
 }
 
@@ -1112,13 +1121,13 @@ function checkWeekFullDone() {
 }
 
 function getRewardSummary() {
-  const count = data.adultPetsTotal;
+  const availableAdults = data.adultPetsTotal - (data.rewardHistory || []).reduce((sum, h) => sum + h.cost, 0);
   const unlocked = [];
-  if (count >= 1) unlocked.push('🍦冰激凌/饮料');
-  if (count >= 2) unlocked.push('📺看电视');
-  if (count >= 20 && getStreakDays() >= 7) unlocked.push('🧸买小玩具');
-  if (count >= 30 && getStreakDays() >= 14) unlocked.push('🎢去游乐园');
-  return unlocked.length > 0 ? '已解锁：' + unlocked.join('、') : '暂无解锁奖励';
+  if (availableAdults >= 1) unlocked.push('🍦冰激凌/饮料');
+  if (availableAdults >= 2) unlocked.push('📺看电视');
+  if (availableAdults >= 20 && getStreakDays() >= 7) unlocked.push('🧸买小玩具');
+  if (availableAdults >= 30 && getStreakDays() >= 14) unlocked.push('🎢去游乐园');
+  return unlocked.length > 0 ? '可兑换：' + unlocked.join('、') : '暂无可兑换奖励';
 }
 
 // ==================== 推送 ====================
@@ -1516,42 +1525,75 @@ function renderRewards() {
 
   // 现实奖励
   html += '<div class="rewards-list">';
-  html += '<div style="font-weight:700;font-size:0.9rem;margin-bottom:8px;">🏆 现实奖励</div>';
+  html += '<div style="font-weight:700;font-size:0.9rem;margin-bottom:8px;">🏆 现实奖励 <span style="font-size:0.7rem;color:var(--text-light);font-weight:400;">（兑换后重新积累）</span></div>';
 
   const rewards = [
-    { cond: 1, name: '吃冰激凌 / 喝饮料', emoji: '🍦', key: 'icecream', type: 'pets' },
-    { cond: 2, name: '看电视一集', emoji: '📺', key: 'tv', type: 'pets' },
-    { cond: 3, name: '买小玩具', emoji: '🧸', key: 'toy', type: 'both', petsNeed: 20, daysNeed: 7 },
-    { cond: 5, name: '去游乐园玩', emoji: '🎢', key: 'amusement', type: 'both', petsNeed: 30, daysNeed: 14 }
+    { cond: 1, name: '吃冰激凌 / 喝饮料', emoji: '🍦', key: 'icecream', type: 'pets', cost: 1 },
+    { cond: 2, name: '看电视一集', emoji: '📺', key: 'tv', type: 'pets', cost: 2 },
+    { cond: 3, name: '买小玩具', emoji: '🧸', key: 'toy', type: 'both', petsNeed: 20, daysNeed: 7, cost: 20 },
+    { cond: 5, name: '去游乐园玩', emoji: '🎢', key: 'amusement', type: 'both', petsNeed: 30, daysNeed: 14, cost: 30 }
   ];
 
+  // 可用成年宠物数 = 累计成年 - 已兑换消耗
+  const availableAdults = data.adultPetsTotal - (data.rewardHistory || []).reduce((sum, h) => sum + h.cost, 0);
+
   for (const r of rewards) {
-    let unlocked;
+    let canRedeem;
     if (r.type === 'both') {
-      unlocked = data.adultPetsTotal >= r.petsNeed && getStreakDays() >= r.daysNeed;
+      canRedeem = availableAdults >= r.cost && getStreakDays() >= r.daysNeed;
     } else {
-      unlocked = data.adultPetsTotal >= r.cond;
+      canRedeem = availableAdults >= r.cost;
     }
 
     let condText;
     if (r.type === 'both') {
-      condText = `${r.petsNeed}只宠物成年 + 连续${r.daysNeed}天全勤`;
-      condText += unlocked ? ' ✅' : `（成年${data.adultPetsTotal}/${r.petsNeed} | 连续${getStreakDays()}/${r.daysNeed}天）`;
+      condText = `消耗${r.cost}只成年 + 连续${r.daysNeed}天全勤`;
+      condText += canRedeem ? ' ✅' : `（可用${availableAdults}/${r.cost} | 连续${getStreakDays()}/${r.daysNeed}天）`;
     } else {
-      condText = `需要 ${r.cond} 只宠物成年 ${unlocked ? '✅' : `（当前 ${data.adultPetsTotal} 只）`}`;
+      condText = `消耗${r.cost}只成年宠物 ${canRedeem ? '✅' : `（当前可用 ${availableAdults} 只）`}`;
     }
-    html += `<div class="reward-item ${unlocked ? 'unlocked' : 'locked'}">
+
+    // 查询该奖励已兑换次数
+    const redeemedCount = (data.rewardHistory || []).filter(h => h.key === r.key).length;
+
+    html += `<div class="reward-item ${canRedeem ? 'unlocked' : 'locked'}">
       <span class="reward-emoji">${r.emoji}</span>
       <div class="reward-info">
-        <div class="reward-name">${r.name}</div>
+        <div class="reward-name">${r.name} ${redeemedCount > 0 ? `<span style="font-size:0.7rem;color:var(--text-light);">×${redeemedCount}</span>` : ''}</div>
         <div class="reward-cond">${condText}</div>
       </div>
-      <span class="reward-badge ${unlocked ? 'unlocked' : 'locked'}">${unlocked ? '已解锁' : '未解锁'}</span>
+      ${canRedeem
+        ? `<button class="reward-redeem-btn" onclick="redeemReward('${r.key}', '${r.name}', ${r.cost})">🎁 兑换</button>`
+        : `<span class="reward-badge locked">未达成</span>`}
     </div>`;
   }
+
+  // 显示可用成年宠物数
+  html += `<div style="margin-top:10px;padding:8px 14px;background:#f5faf7;border-radius:10px;font-size:0.8rem;color:var(--text-light);text-align:center;">
+    🐾 可用成年宠物：<strong style="color:#3d7a5c;font-size:1rem;">${availableAdults}</strong> 只
+    （累计${data.adultPetsTotal} · 已兑换${(data.rewardHistory || []).reduce((sum, h) => sum + h.cost, 0)}）
+  </div>`;
+
   html += '</div>';
 
   document.getElementById('rewards-content').innerHTML = html;
+}
+
+function redeemReward(key, name, cost) {
+  const availableAdults = data.adultPetsTotal - (data.rewardHistory || []).reduce((sum, h) => sum + h.cost, 0);
+  if (availableAdults < cost) { showToast('成年宠物数不够哦~'); return; }
+
+  if (!confirm(`确定要兑换「${name}」吗？\n将消耗 ${cost} 只成年宠物。`)) return;
+
+  if (!data.rewardHistory) data.rewardHistory = [];
+  data.rewardHistory.push({ key, name, cost, date: getTodayStr(), time: Date.now() });
+  saveData();
+  showToast(`🎉 兑换成功！${name}！消耗${cost}只成年宠物`);
+  renderRewards();
+
+  if (data.sendKey) {
+    sendPush('🎉 奖励兑换！', `高兴兑换了「${name}」！消耗${cost}只成年宠物，剩余可用${availableAdults - cost}只。`);
+  }
 }
 
 function navigatePet(dir) {
