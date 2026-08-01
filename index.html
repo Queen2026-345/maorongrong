@@ -1125,8 +1125,8 @@ function getRewardSummary() {
   const unlocked = [];
   if (availableAdults >= 1) unlocked.push('🍦冰激凌/饮料');
   if (availableAdults >= 2) unlocked.push('📺看电视');
-  if (availableAdults >= 20 && getStreakDays() >= 7) unlocked.push('🧸买小玩具');
-  if (availableAdults >= 30 && getStreakDays() >= 14) unlocked.push('🎢去游乐园');
+  if (availableAdults >= 20) unlocked.push('🧸买小玩具');
+  if (availableAdults >= 30) unlocked.push('🎢去游乐园');
   return unlocked.length > 0 ? '可兑换：' + unlocked.join('、') : '暂无可兑换奖励';
 }
 
@@ -1530,28 +1530,16 @@ function renderRewards() {
   const rewards = [
     { cond: 1, name: '吃冰激凌 / 喝饮料', emoji: '🍦', key: 'icecream', type: 'pets', cost: 1 },
     { cond: 2, name: '看电视一集', emoji: '📺', key: 'tv', type: 'pets', cost: 2 },
-    { cond: 3, name: '买小玩具', emoji: '🧸', key: 'toy', type: 'both', petsNeed: 20, daysNeed: 7, cost: 20 },
-    { cond: 5, name: '去游乐园玩', emoji: '🎢', key: 'amusement', type: 'both', petsNeed: 30, daysNeed: 14, cost: 30 }
+    { cond: 3, name: '买小玩具', emoji: '🧸', key: 'toy', type: 'pets', cost: 20 },
+    { cond: 5, name: '去游乐园玩', emoji: '🎢', key: 'amusement', type: 'pets', cost: 30 }
   ];
 
   // 可用成年宠物数 = 累计成年 - 已兑换消耗
   const availableAdults = data.adultPetsTotal - (data.rewardHistory || []).reduce((sum, h) => sum + h.cost, 0);
 
   for (const r of rewards) {
-    let canRedeem;
-    if (r.type === 'both') {
-      canRedeem = availableAdults >= r.cost && getStreakDays() >= r.daysNeed;
-    } else {
-      canRedeem = availableAdults >= r.cost;
-    }
-
-    let condText;
-    if (r.type === 'both') {
-      condText = `消耗${r.cost}只成年 + 连续${r.daysNeed}天全勤`;
-      condText += canRedeem ? ' ✅' : `（可用${availableAdults}/${r.cost} | 连续${getStreakDays()}/${r.daysNeed}天）`;
-    } else {
-      condText = `消耗${r.cost}只成年宠物 ${canRedeem ? '✅' : `（当前可用 ${availableAdults} 只）`}`;
-    }
+    const canRedeem = availableAdults >= r.cost;
+    const condText = `消耗${r.cost}只成年宠物 ${canRedeem ? '✅' : `（当前可用 ${availableAdults} 只）`}`;
 
     // 查询该奖励已兑换次数
     const redeemedCount = (data.rewardHistory || []).filter(h => h.key === r.key).length;
