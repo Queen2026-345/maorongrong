@@ -866,24 +866,40 @@ function isTaskRewarded(taskKey) {
   return rt[today].includes(taskKey);
 }
 
-function markTaskRewarded(taskKey) {
+function markTaskRewarded(taskKey, add) {
   const today = getTodayStr();
   const rt = getRewardedTasks();
   if (!rt[today]) rt[today] = [];
-  rt[today].push(taskKey);
+  if (add) {
+    if (!rt[today].includes(taskKey)) rt[today].push(taskKey);
+  } else {
+    rt[today] = rt[today].filter(k => k !== taskKey);
+  }
 }
 
 // 给任务完成奖励
 function giveTaskReward(taskKey) {
   if (isTaskRewarded(taskKey)) return;
-  markTaskRewarded(taskKey);
+  markTaskRewarded(taskKey, true);
 
   const amount = TASK_REWARDS[taskKey] || 1;
   data.inventory.food += amount;
   saveData();
   renderRewards();
-  // 用 +N 飘字
   spawnFloatingText(`+${amount} 🍖`);
+}
+
+// 取消勾选收回奖励
+function revokeTaskReward(taskKey) {
+  if (!isTaskRewarded(taskKey)) return;
+  markTaskRewarded(taskKey, false);
+
+  const amount = TASK_REWARDS[taskKey] || 1;
+  // 食品数不能为负
+  data.inventory.food = Math.max(0, data.inventory.food - amount);
+  saveData();
+  renderRewards();
+  spawnFloatingText(`-${amount} 🍖`);
 }
 
 function isAllDone() {
@@ -949,6 +965,13 @@ function updatePetStage(pet) {
       setTimeout(() => triggerEvolve(pet.id), 200);
       showToast(`🎊 ${pet.name} 成年啦！`);
 
+      // 三只都成年后解锁新蛋
+      const activePets = data.pets.filter(p => p.stage !== 'adult');
+      if (activePets.length === 0 && data.pets.length >= MAX_PETS) {
+        data.inventory.eggs++;
+        showToast(`🌟 全部${MAX_PETS}只宠物都成年啦！获得一颗新宠物蛋，继续养吧！`);
+      }
+
       if (data.sendKey) {
         sendPush('🎊 宠物成年！', `高兴的宠物「${pet.name}」成年啦！累计成年：${data.adultPetsTotal} 只。${getRewardSummary()}`);
       }
@@ -965,7 +988,7 @@ function updatePetStage(pet) {
 function hatchEgg() {
   if (data.inventory.eggs <= 0) { showToast('没有宠物蛋可以孵化 😢'); return; }
   const activePets = data.pets.filter(p => p.stage !== 'adult');
-  if (activePets.length >= MAX_PETS) { showToast(`最多同时养 ${MAX_PETS} 只宠物哦~等它们成年吧！`); return; }
+  if (activePets.length >= MAX_PETS) { showToast(`最多同时养 ${MAX_PETS} 只未成年的宠物哦~等它们成年吧！`); return; }
 
   data.inventory.eggs--;
   const usedNames = data.pets.map(p => p.name);
@@ -1303,9 +1326,11 @@ function toggleTask(key) {
   obj[parts[parts.length - 1]] = !current;
   saveData();
 
-  // 勾选时给奖励（取消勾选不给）
+  // 勾选时给奖励，取消勾选时收回
   if (!current) {
     giveTaskReward(key);
+  } else {
+    revokeTaskReward(key);
   }
 
   renderTasks();
@@ -1322,6 +1347,8 @@ function toggleReadingNote() {
 
   if (!wasDone) {
     giveTaskReward('extra.readingNote');
+  } else {
+    revokeTaskReward('extra.readingNote');
   }
 
   renderTasks();
